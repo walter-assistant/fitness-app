@@ -19,6 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl">
+      <head>
+        <meta charSet="utf-8" />
+      </head>
       <body style={{ margin: 0, padding: 0 }}>{children}</body>
     </html>
   );

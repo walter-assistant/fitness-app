@@ -1,5 +1,4 @@
-﻿
-// ===== DATA LAYER =====
+﻿// ===== DATA LAYER =====
 function ld(key, fallback) {
   try { const d = localStorage.getItem('sb_' + key); return d ? JSON.parse(d) : fallback; }
   catch(e) { return fallback; }
@@ -28,34 +27,34 @@ const DEFAULT_PROFILE = {
 
 // ===== MOTIVATIE QUOTES =====
 const QUOTES = [
-  "De enige slechte workout is de workout die je niet hebt gedaan. ðŸ’ª",
-  "Discipline is kiezen tussen wat je nu wilt en wat je het meest wilt. ðŸŽ¯",
-  "Elke dag is een kans om sterker te worden. ðŸ”¥",
-  "Compound lifts + HIIT = de snelste weg naar vetverbranding. ðŸ½ï¸ðŸ’ª",
-  "Geef niet op. Het begin is altijd het moeilijkst. ðŸš€",
-  "Consistentie verslaat perfectie. Elke dag een beetje beter. ðŸ“ˆ",
-  "Je lichaam kan bijna alles aan. Het is je hoofd dat je moet overtuigen. ðŸ§ ",
-  "Zweet is vet dat huilt. Laat het maar lopen! ðŸ’§",
-  "Over 4 weken zul je blij zijn dat je vandaag bent begonnen. â°",
-  "Pain is temporary, pride is forever. ðŸ†",
-  "Grote spiergroepen = meer calorieÃ«n verbranden. Squat die vet eraf! ðŸŽ¬",
-  "Je hoeft niet perfect te zijn, je moet alleen niet stoppen. âš¡",
-  "Kleine stappen, grote resultaten. Dag voor dag. ðŸ‘£",
-  "Je concurreert alleen met de persoon die je gisteren was. ðŸªž",
-  "Halverwege! Je bent sterker dan je denkt. ðŸ’Ž",
-  "Resultaten komen niet van wensen, maar van werken. ðŸ”¨",
-  "Elke rep telt, elke maaltijd telt, elk besluit telt. âœ…",
-  "Je bent niet moe, je bent niet gemotiveerd. Doe het toch. ðŸ˜¤",
-  "Week 3 al! HIIT + compound = metabolisme op volle toeren. ðŸ”„",
-  "Het verschil tussen proberen en doen is resultaat. ðŸ’¯",
-  "Full body training verbrandt meer dan 100 crunches. Werk slim! ðŸ—ï¸",
-  "Spierpijn is je lichaam dat zegt: ik groei. ðŸ“¢",
-  "Bijna klaar! De finish is in zicht. Sprint! ðŸƒ",
-  "Trots op jezelf? Dat zou je moeten zijn. ðŸŒŸ",
-  "Dag 25! Je hebt bewezen dat je het kunt. ðŸ’ªðŸ”¥",
-  "De laatste loodjes wegen het zwaarst, maar zijn het meest waard. âš–ï¸",
-  "Morgen is de laatste dag. Geef alles wat je hebt! ðŸŽ¯ðŸ”¥",
-  "DAG 28! Je hebt het gedaan! Kampioen! ðŸ†ðŸŽ‰ðŸ”¥"
+  "De enige slechte workout is de workout die je niet hebt gedaan. 💪",
+  "Discipline is kiezen tussen wat je nu wilt en wat je het meest wilt. 🎯",
+  "Elke dag is een kans om sterker te worden. 🔥",
+  "Compound lifts + HIIT = de snelste weg naar vetverbranding. 🍽️💪",
+  "Geef niet op. Het begin is altijd het moeilijkst. 🚀",
+  "Consistentie verslaat perfectie. Elke dag een beetje beter. 📈",
+  "Je lichaam kan bijna alles aan. Het is je hoofd dat je moet overtuigen. 🧠",
+  "Zweet is vet dat huilt. Laat het maar lopen! 💧",
+  "Over 4 weken zul je blij zijn dat je vandaag bent begonnen. ⏰",
+  "Pain is temporary, pride is forever. 🏆",
+  "Grote spiergroepen = meer calorieën verbranden. Squat die vet eraf! 🎬",
+  "Je hoeft niet perfect te zijn, je moet alleen niet stoppen. ⚡",
+  "Kleine stappen, grote resultaten. Dag voor dag. 👣",
+  "Je concurreert alleen met de persoon die je gisteren was. 🪞",
+  "Halverwege! Je bent sterker dan je denkt. 💎",
+  "Resultaten komen niet van wensen, maar van werken. 🔨",
+  "Elke rep telt, elke maaltijd telt, elk besluit telt. ✅",
+  "Je bent niet moe, je bent niet gemotiveerd. Doe het toch. 😤",
+  "Week 3 al! HIIT + compound = metabolisme op volle toeren. 🔄",
+  "Het verschil tussen proberen en doen is resultaat. 💯",
+  "Full body training verbrandt meer dan 100 crunches. Werk slim! 🏗️",
+  "Spierpijn is je lichaam dat zegt: ik groei. 📢",
+  "Bijna klaar! De finish is in zicht. Sprint! 🏃",
+  "Trots op jezelf? Dat zou je moeten zijn. 🌟",
+  "Dag 25! Je hebt bewezen dat je het kunt. 💪🔥",
+  "De laatste loodjes wegen het zwaarst, maar zijn het meest waard. ⚖️",
+  "Morgen is de laatste dag. Geef alles wat je hebt! 🎯🔥",
+  "DAG 28! Je hebt het gedaan! Kampioen! 🏆🎉🔥"
 ];
 
 // ===== MEAL SUGGESTIONS =====
@@ -82,7 +81,7 @@ const MEAL_SUGGESTIONS = {
     {naam:'Linzensoep met volkoren brood',kcal:370,eiwit:20,koolhydraten:50,vet:8},
     {naam:'Turks brood met kip shoarma',kcal:460,eiwit:34,koolhydraten:42,vet:16},
     {naam:'Cottage cheese met tomaat & komkommer',kcal:250,eiwit:24,koolhydraten:12,vet:12},
-    {naam:'PokÃ© bowl met rijst & zalm',kcal:480,eiwit:28,koolhydraten:52,vet:16}
+    {naam:'Poké bowl met rijst & zalm',kcal:480,eiwit:28,koolhydraten:52,vet:16}
   ],
   diner: [
     {naam:'Zalm met gegrilde groenten',kcal:450,eiwit:35,koolhydraten:20,vet:24},
@@ -99,7 +98,7 @@ const MEAL_SUGGESTIONS = {
   snacks: [
     {naam:'Appel met pindakaas',kcal:200,eiwit:6,koolhydraten:22,vet:10},
     {naam:'Handvol noten mix (30g)',kcal:180,eiwit:6,koolhydraten:6,vet:16},
-    {naam:'Rijstwafels met hÃ¼ttenkÃ¤se',kcal:120,eiwit:8,koolhydraten:14,vet:2},
+    {naam:'Rijstwafels met hüttenkäse',kcal:120,eiwit:8,koolhydraten:14,vet:2},
     {naam:'Eiwitshake (whey + water)',kcal:130,eiwit:25,koolhydraten:4,vet:2},
     {naam:'Wortel & komkommer met hummus',kcal:150,eiwit:6,koolhydraten:16,vet:7},
     {naam:'Gekookt ei',kcal:75,eiwit:6,koolhydraten:1,vet:5},
@@ -115,59 +114,59 @@ const EXERCISES = [
   // === CORE OEFENINGEN ===
   {id:'plank',naam:'Plank',beschrijving:'Onderarmen en tenen op de grond, lichaam recht als een plank. Span je buik aan.',spieren:'Rectus abdominis, transversus abdominis, schuine buikspieren',moeilijkheid:1,categorie:'core',type:'tijd',standaard:'30 sec'},
   {id:'side-plank',naam:'Side Plank',beschrijving:'Lig op je zij, steun op onderarm. Hef je heup omhoog zodat je lichaam een rechte lijn vormt.',spieren:'Schuine buikspieren, transversus abdominis',moeilijkheid:1,categorie:'core',type:'tijd',standaard:'20 sec per kant'},
-  {id:'crunches',naam:'Crunches',beschrijving:'Lig op je rug, knieÃ«n gebogen. Til je schouders op richting je knieÃ«n door je buik aan te spannen.',spieren:'Rectus abdominis (bovenste deel)',moeilijkheid:1,categorie:'core',type:'reps',standaard:'15 reps'},
+  {id:'crunches',naam:'Crunches',beschrijving:'Lig op je rug, knieën gebogen. Til je schouders op richting je knieën door je buik aan te spannen.',spieren:'Rectus abdominis (bovenste deel)',moeilijkheid:1,categorie:'core',type:'reps',standaard:'15 reps'},
   {id:'bicycle-crunches',naam:'Bicycle Crunches',beschrijving:'Lig op je rug, handen achter je hoofd. Breng afwisselend elleboog naar tegenovergestelde knie.',spieren:'Rectus abdominis, schuine buikspieren',moeilijkheid:1,categorie:'core',type:'reps',standaard:'20 reps'},
-  {id:'leg-raises',naam:'Leg Raises',beschrijving:'Lig op je rug, benen gestrekt. Til je benen langzaam omhoog tot 90Â° en laat ze gecontroleerd zakken.',spieren:'Rectus abdominis (onderste deel), heupflexoren',moeilijkheid:2,categorie:'core',type:'reps',standaard:'12 reps'},
-  {id:'mountain-climbers',naam:'Mountain Climbers',beschrijving:'Push-up positie. Trek afwisselend je knieÃ«n naar je borst in een loopbeweging.',spieren:'Rectus abdominis, schuine buikspieren, heupflexoren',moeilijkheid:2,categorie:'core',type:'tijd',standaard:'30 sec'},
-  {id:'russian-twists',naam:'Russian Twists',beschrijving:'Zit met knieÃ«n gebogen, voeten van de grond. Draai je bovenlichaam van links naar rechts.',spieren:'Schuine buikspieren, rectus abdominis',moeilijkheid:1,categorie:'core',type:'reps',standaard:'20 reps'},
-  {id:'dead-bug',naam:'Dead Bug',beschrijving:'Lig op je rug, armen omhoog, knieÃ«n 90Â°. Strek afwisselend tegenovergestelde arm en been uit.',spieren:'Transversus abdominis, rectus abdominis',moeilijkheid:1,categorie:'core',type:'reps',standaard:'10 per kant'},
+  {id:'leg-raises',naam:'Leg Raises',beschrijving:'Lig op je rug, benen gestrekt. Til je benen langzaam omhoog tot 90° en laat ze gecontroleerd zakken.',spieren:'Rectus abdominis (onderste deel), heupflexoren',moeilijkheid:2,categorie:'core',type:'reps',standaard:'12 reps'},
+  {id:'mountain-climbers',naam:'Mountain Climbers',beschrijving:'Push-up positie. Trek afwisselend je knieën naar je borst in een loopbeweging.',spieren:'Rectus abdominis, schuine buikspieren, heupflexoren',moeilijkheid:2,categorie:'core',type:'tijd',standaard:'30 sec'},
+  {id:'russian-twists',naam:'Russian Twists',beschrijving:'Zit met knieën gebogen, voeten van de grond. Draai je bovenlichaam van links naar rechts.',spieren:'Schuine buikspieren, rectus abdominis',moeilijkheid:1,categorie:'core',type:'reps',standaard:'20 reps'},
+  {id:'dead-bug',naam:'Dead Bug',beschrijving:'Lig op je rug, armen omhoog, knieën 90°. Strek afwisselend tegenovergestelde arm en been uit.',spieren:'Transversus abdominis, rectus abdominis',moeilijkheid:1,categorie:'core',type:'reps',standaard:'10 per kant'},
   {id:'flutter-kicks',naam:'Flutter Kicks',beschrijving:'Lig op je rug, benen net boven de grond. Maak kleine op-en-neer schoppende bewegingen.',spieren:'Rectus abdominis (onderste deel), heupflexoren',moeilijkheid:2,categorie:'core',type:'tijd',standaard:'30 sec'},
   {id:'toe-touches',naam:'Toe Touches',beschrijving:'Lig op je rug, benen verticaal omhoog. Reik met je handen naar je tenen door je schouders op te tillen.',spieren:'Rectus abdominis (bovenste deel)',moeilijkheid:1,categorie:'core',type:'reps',standaard:'15 reps'},
-  {id:'heel-taps',naam:'Heel Taps',beschrijving:'Lig op je rug, knieÃ«n gebogen, voeten plat. Buig zijwaarts en tik afwisselend je hielen aan.',spieren:'Schuine buikspieren',moeilijkheid:1,categorie:'core',type:'reps',standaard:'20 reps'},
+  {id:'heel-taps',naam:'Heel Taps',beschrijving:'Lig op je rug, knieën gebogen, voeten plat. Buig zijwaarts en tik afwisselend je hielen aan.',spieren:'Schuine buikspieren',moeilijkheid:1,categorie:'core',type:'reps',standaard:'20 reps'},
   {id:'v-ups',naam:'V-Ups',beschrijving:'Lig op je rug, armen boven je hoofd. Til tegelijk je benen en bovenlichaam op tot een V-vorm.',spieren:'Rectus abdominis, heupflexoren',moeilijkheid:3,categorie:'core',type:'reps',standaard:'10 reps'},
   {id:'hollow-body',naam:'Hollow Body Hold',beschrijving:'Lig op je rug, armen langs je oren, benen gestrekt. Til alles net van de grond en houd vast.',spieren:'Transversus abdominis, rectus abdominis',moeilijkheid:3,categorie:'core',type:'tijd',standaard:'20 sec'},
   {id:'ab-wheel',naam:'Ab Wheel Rollout',beschrijving:'Kniel met ab wheel in je handen. Rol langzaam naar voren en trek jezelf terug met je buikspieren.',spieren:'Rectus abdominis, transversus abdominis, schouders',moeilijkheid:3,categorie:'core',type:'reps',standaard:'8 reps'},
-  {id:'hanging-knee',naam:'Hanging Knee Raises',beschrijving:'Hang aan een stang. Trek je knieÃ«n omhoog richting je borst door je buik aan te spannen.',spieren:'Rectus abdominis (onderste deel), heupflexoren',moeilijkheid:3,categorie:'core',type:'reps',standaard:'10 reps'},
+  {id:'hanging-knee',naam:'Hanging Knee Raises',beschrijving:'Hang aan een stang. Trek je knieën omhoog richting je borst door je buik aan te spannen.',spieren:'Rectus abdominis (onderste deel), heupflexoren',moeilijkheid:3,categorie:'core',type:'reps',standaard:'10 reps'},
   {id:'woodchoppers',naam:'Woodchoppers',beschrijving:'Sta met voeten op schouderbreedte. Maak een diagonale hak-beweging van hoog naar laag (of omgekeerd).',spieren:'Schuine buikspieren, rectus abdominis',moeilijkheid:2,categorie:'core',type:'reps',standaard:'12 per kant'},
-  {id:'bird-dog',naam:'Bird Dog',beschrijving:'Op handen en knieÃ«n. Strek tegelijk je rechterarm en linkerbeen uit. Wissel af.',spieren:'Transversus abdominis, lage rug, core stabiliteit',moeilijkheid:1,categorie:'core',type:'reps',standaard:'10 per kant'},
-  {id:'bear-crawl',naam:'Bear Crawl',beschrijving:'Op handen en voeten, knieÃ«n net boven de grond. Kruip naar voren in kleine stappen.',spieren:'Transversus abdominis, schouders, volledige core',moeilijkheid:2,categorie:'core',type:'tijd',standaard:'30 sec'},
-  {id:'reverse-crunch',naam:'Reverse Crunch',beschrijving:'Lig op je rug, knieÃ«n 90Â°. Til je heupen van de grond door je knieÃ«n naar je borst te trekken.',spieren:'Rectus abdominis (onderste deel)',moeilijkheid:2,categorie:'core',type:'reps',standaard:'12 reps'},
-  {id:'dragon-flag',naam:'Dragon Flag',beschrijving:'Lig op een bank, grijp boven je hoofd vast. Til je hele lichaam als Ã©Ã©n stuk omhoog en laat langzaam zakken.',spieren:'Rectus abdominis, volledige core',moeilijkheid:3,categorie:'core',type:'reps',standaard:'5 reps'},
+  {id:'bird-dog',naam:'Bird Dog',beschrijving:'Op handen en knieën. Strek tegelijk je rechterarm en linkerbeen uit. Wissel af.',spieren:'Transversus abdominis, lage rug, core stabiliteit',moeilijkheid:1,categorie:'core',type:'reps',standaard:'10 per kant'},
+  {id:'bear-crawl',naam:'Bear Crawl',beschrijving:'Op handen en voeten, knieën net boven de grond. Kruip naar voren in kleine stappen.',spieren:'Transversus abdominis, schouders, volledige core',moeilijkheid:2,categorie:'core',type:'tijd',standaard:'30 sec'},
+  {id:'reverse-crunch',naam:'Reverse Crunch',beschrijving:'Lig op je rug, knieën 90°. Til je heupen van de grond door je knieën naar je borst te trekken.',spieren:'Rectus abdominis (onderste deel)',moeilijkheid:2,categorie:'core',type:'reps',standaard:'12 reps'},
+  {id:'dragon-flag',naam:'Dragon Flag',beschrijving:'Lig op een bank, grijp boven je hoofd vast. Til je hele lichaam als één stuk omhoog en laat langzaam zakken.',spieren:'Rectus abdominis, volledige core',moeilijkheid:3,categorie:'core',type:'reps',standaard:'5 reps'},
   {id:'plank-shoulder-tap',naam:'Plank Shoulder Taps',beschrijving:'In plank positie op handen. Tik afwisselend met je hand op je tegenovergestelde schouder.',spieren:'Core stabiliteit, schouders',moeilijkheid:2,categorie:'core',type:'reps',standaard:'16 reps'},
   {id:'scissors',naam:'Scissors',beschrijving:'Lig op je rug, benen gestrekt omhoog. Kruis je benen over elkaar in een schaar-beweging.',spieren:'Rectus abdominis, heupflexoren',moeilijkheid:2,categorie:'core',type:'tijd',standaard:'30 sec'},
 
   // === COMPOUND / FULL BODY OEFENINGEN ===
-  {id:'squats',naam:'Squats',beschrijving:'Sta met voeten op schouderbreedte. Zak door je knieÃ«n alsof je op een stoel gaat zitten. Houd je rug recht en duw door je hakken omhoog. Varianten: goblet squat, sumo squat, jump squat.',spieren:'Quadriceps, gluteus, hamstrings, core',moeilijkheid:1,categorie:'compound',type:'reps',standaard:'12 reps'},
+  {id:'squats',naam:'Squats',beschrijving:'Sta met voeten op schouderbreedte. Zak door je knieën alsof je op een stoel gaat zitten. Houd je rug recht en duw door je hakken omhoog. Varianten: goblet squat, sumo squat, jump squat.',spieren:'Quadriceps, gluteus, hamstrings, core',moeilijkheid:1,categorie:'compound',type:'reps',standaard:'12 reps'},
   {id:'deadlifts',naam:'Romanian Deadlift (dumbbells)',beschrijving:'Sta met dumbbells in je handen, voeten heupbreed. Buig vanuit je heupen naar voren met lichte kniebuiging. Houd je rug recht en voel de stretch in je hamstrings. Kom gecontroleerd omhoog.',spieren:'Hamstrings, gluteus, lage rug, core, onderarmen',moeilijkheid:2,categorie:'compound',type:'reps',standaard:'10 reps'},
   {id:'push-ups',naam:'Push-ups',beschrijving:'Handen op schouderbreedte, lichaam in een rechte lijn. Zak tot je borst bijna de grond raakt en duw omhoog. Varianten: diamond (handen dicht bij elkaar), wide (breed), incline (handen op verhoging voor beginners).',spieren:'Borst, triceps, voorste schouder, core',moeilijkheid:1,categorie:'compound',type:'reps',standaard:'12 reps'},
   {id:'pull-ups',naam:'Pull-ups / Bodyweight Rows',beschrijving:'Hang aan een stang met gestrekte armen, handpalmen van je af. Trek jezelf omhoog tot je kin boven de stang is. Alternatief: bodyweight rows (schuin hangen aan een lage stang en naar je borst trekken).',spieren:'Latissimus dorsi, biceps, bovenrug, core',moeilijkheid:3,categorie:'compound',type:'reps',standaard:'6 reps'},
-  {id:'lunges',naam:'Lunges',beschrijving:'Maak een grote stap naar voren en zak door je knieÃ«n tot beide knieÃ«n 90Â° zijn. Duw af en keer terug. Varianten: reverse lunge (stap naar achteren), walking lunge (doorlopen).',spieren:'Quadriceps, gluteus, hamstrings, core, balans',moeilijkheid:1,categorie:'compound',type:'reps',standaard:'10 per been'},
+  {id:'lunges',naam:'Lunges',beschrijving:'Maak een grote stap naar voren en zak door je knieën tot beide knieën 90° zijn. Duw af en keer terug. Varianten: reverse lunge (stap naar achteren), walking lunge (doorlopen).',spieren:'Quadriceps, gluteus, hamstrings, core, balans',moeilijkheid:1,categorie:'compound',type:'reps',standaard:'10 per been'},
   {id:'overhead-press',naam:'Overhead Press',beschrijving:'Sta met dumbbells op schouderhoogte, handpalmen naar voren. Druk de gewichten recht omhoog boven je hoofd. Laat gecontroleerd zakken. Alternatief: pike push-up (voeten op verhoging, heupen hoog, druk omhoog).',spieren:'Schouders (deltoideus), triceps, core',moeilijkheid:2,categorie:'compound',type:'reps',standaard:'10 reps'},
   {id:'bent-over-rows',naam:'Bent-over Rows (dumbbells)',beschrijving:'Buig vanuit je heupen met lichte kniebuiging, rug recht. Trek de dumbbells naar je navel door je schouderbladen samen te knijpen. Laat gecontroleerd zakken.',spieren:'Bovenrug, latissimus dorsi, biceps, achterste schouder',moeilijkheid:2,categorie:'compound',type:'reps',standaard:'10 reps'},
-  {id:'step-ups',naam:'Step-ups',beschrijving:'Stap op een verhoogd platform (bank, trap, box) met Ã©Ã©n been. Druk jezelf omhoog tot je helemaal staat. Stap gecontroleerd terug. Wissel van been.',spieren:'Quadriceps, gluteus, hamstrings, balans',moeilijkheid:1,categorie:'compound',type:'reps',standaard:'10 per been'},
-  {id:'glute-bridges',naam:'Glute Bridges / Hip Thrusts',beschrijving:'Lig op je rug, knieÃ«n gebogen, voeten plat. Duw je heupen omhoog door je billen aan te spannen. Knijp bovenaan samen en laat gecontroleerd zakken. Voor hip thrusts: schouders op een bank.',spieren:'Gluteus maximus, hamstrings, core',moeilijkheid:1,categorie:'compound',type:'reps',standaard:'15 reps'},
+  {id:'step-ups',naam:'Step-ups',beschrijving:'Stap op een verhoogd platform (bank, trap, box) met één been. Druk jezelf omhoog tot je helemaal staat. Stap gecontroleerd terug. Wissel van been.',spieren:'Quadriceps, gluteus, hamstrings, balans',moeilijkheid:1,categorie:'compound',type:'reps',standaard:'10 per been'},
+  {id:'glute-bridges',naam:'Glute Bridges / Hip Thrusts',beschrijving:'Lig op je rug, knieën gebogen, voeten plat. Duw je heupen omhoog door je billen aan te spannen. Knijp bovenaan samen en laat gecontroleerd zakken. Voor hip thrusts: schouders op een bank.',spieren:'Gluteus maximus, hamstrings, core',moeilijkheid:1,categorie:'compound',type:'reps',standaard:'15 reps'},
   {id:'farmers-walk',naam:'Farmer\'s Walk',beschrijving:'Pak zware dumbbells of kettlebells op. Loop met rechte rug, schouders naar achteren, in een gecontroleerd tempo. Houd je core aangespannen. Loop een vaste afstand of tijd.',spieren:'Onderarmen, trapezius, core, schouders, benen',moeilijkheid:1,categorie:'compound',type:'tijd',standaard:'30 sec'},
 
   // === HIIT OEFENINGEN ===
   {id:'burpees',naam:'Burpees',beschrijving:'Sta rechtop, zak door naar een squat, spring naar plank positie, doe een push-up, spring terug naar squat en spring explosief omhoog met armen boven je hoofd.',spieren:'Full body: benen, borst, schouders, core, cardio',moeilijkheid:3,categorie:'hiit',type:'reps',standaard:'10 reps'},
   {id:'jump-squats',naam:'Jump Squats',beschrijving:'Voer een normale squat uit maar spring explosief omhoog vanuit de laagste positie. Land zacht op de ballen van je voeten en ga direct door naar de volgende rep.',spieren:'Quadriceps, gluteus, hamstrings, kuiten, cardio',moeilijkheid:2,categorie:'hiit',type:'reps',standaard:'12 reps'},
-  {id:'high-knees',naam:'High Knees',beschrijving:'Ren op de plaats en trek je knieÃ«n zo hoog mogelijk op (minstens heuphoogte). Pompende armbewegingen. Houd een hoog tempo aan.',spieren:'Heupflexoren, quadriceps, core, cardio',moeilijkheid:2,categorie:'hiit',type:'tijd',standaard:'30 sec'},
+  {id:'high-knees',naam:'High Knees',beschrijving:'Ren op de plaats en trek je knieën zo hoog mogelijk op (minstens heuphoogte). Pompende armbewegingen. Houd een hoog tempo aan.',spieren:'Heupflexoren, quadriceps, core, cardio',moeilijkheid:2,categorie:'hiit',type:'tijd',standaard:'30 sec'},
   {id:'box-jumps',naam:'Box Jumps / Jump Overs',beschrijving:'Sta voor een stabiele box of bank. Spring met twee voeten tegelijk op de box, sta volledig rechtop, stap of spring terug. Alternatief: spring over een lage horde heen en weer.',spieren:'Quadriceps, gluteus, kuiten, core, explosieve kracht',moeilijkheid:3,categorie:'hiit',type:'reps',standaard:'8 reps'},
   {id:'kettlebell-swings',naam:'Kettlebell Swings',beschrijving:'Sta met voeten breder dan schouderbreedte, kettlebell in twee handen. Swing de bell tussen je benen door en drijf hem met je heupen naar schouderhoogte. Alternatief: dumbbell swing.',spieren:'Gluteus, hamstrings, core, schouders, cardio',moeilijkheid:2,categorie:'hiit',type:'reps',standaard:'15 reps'},
-  {id:'battle-ropes',naam:'Battle Ropes / Jumping Jacks',beschrijving:'Pak de uiteinden van battle ropes en maak afwisselende golven met je armen. Houd je core strak en knieÃ«n licht gebogen. Alternatief zonder ropes: jumping jacks op hoog tempo.',spieren:'Schouders, armen, core, cardio',moeilijkheid:2,categorie:'hiit',type:'tijd',standaard:'30 sec'},
+  {id:'battle-ropes',naam:'Battle Ropes / Jumping Jacks',beschrijving:'Pak de uiteinden van battle ropes en maak afwisselende golven met je armen. Houd je core strak en knieën licht gebogen. Alternatief zonder ropes: jumping jacks op hoog tempo.',spieren:'Schouders, armen, core, cardio',moeilijkheid:2,categorie:'hiit',type:'tijd',standaard:'30 sec'},
   {id:'sprint-intervals',naam:'Sprint Intervals',beschrijving:'Sprint 20-30 seconden op maximale intensiteit, gevolgd door 30-40 seconden wandelen of rustig joggen. Herhaal. Kan buiten, op een loopband, of op een fiets.',spieren:'Full body cardio, benen, core',moeilijkheid:3,categorie:'hiit',type:'tijd',standaard:'20 sec sprint'},
   {id:'tabata-protocol',naam:'Tabata Protocol',beschrijving:'Kies een oefening (bijv. squats, burpees). Doe 20 seconden maximale inspanning, 10 seconden rust. Herhaal 8 rondes (= 4 minuten totaal). Extreem effectief voor vetverbranding.',spieren:'Afhankelijk van gekozen oefening, full body cardio',moeilijkheid:3,categorie:'hiit',type:'tijd',standaard:'4 min (8x 20/10)'}
 ];
 
 // ===== DAY TYPE LABELS =====
 const DAY_TYPES = {
-  'full-body': {label:'Full Body Compound', emoji:'ðŸ‹ï¸', badge:'day-type-compound', color:'#1565c0'},
-  'hiit-core': {label:'HIIT + Core', emoji:'ðŸ”¥', badge:'day-type-hiit', color:'#c62828'},
-  'upper-core': {label:'Upper Body + Core', emoji:'ðŸ’ª', badge:'day-type-upper', color:'#2e7d32'},
-  'rest': {label:'Rustdag', emoji:'ðŸ§˜', badge:'day-type-rest', color:'#757575'},
-  'lower-core': {label:'Lower Body + Core', emoji:'ðŸ¦µ', badge:'day-type-lower', color:'#7b1fa2'},
-  'hiit-circuit': {label:'HIIT + Full Body Circuit', emoji:'âš¡', badge:'day-type-circuit', color:'#e65100'},
-  'active-rest': {label:'Actief Herstel', emoji:'ðŸš¶', badge:'day-type-rest', color:'#757575'}
+  'full-body': {label:'Full Body Compound', emoji:'🏋️', badge:'day-type-compound', color:'#1565c0'},
+  'hiit-core': {label:'HIIT + Core', emoji:'🔥', badge:'day-type-hiit', color:'#c62828'},
+  'upper-core': {label:'Upper Body + Core', emoji:'💪', badge:'day-type-upper', color:'#2e7d32'},
+  'rest': {label:'Rustdag', emoji:'🧘', badge:'day-type-rest', color:'#757575'},
+  'lower-core': {label:'Lower Body + Core', emoji:'🦵', badge:'day-type-lower', color:'#7b1fa2'},
+  'hiit-circuit': {label:'HIIT + Full Body Circuit', emoji:'⚡', badge:'day-type-circuit', color:'#e65100'},
+  'active-rest': {label:'Actief Herstel', emoji:'🚶', badge:'day-type-rest', color:'#757575'}
 };
 
 // ===== 4-WEEK WORKOUT PLAN (REVISED) =====
@@ -198,7 +197,7 @@ const WORKOUT_PLAN = {
       {id:'plank',sets:3,reps:'25 sec',rust:30},
       {id:'russian-twists',sets:3,reps:'16 reps',rust:30}
     ]},
-    {dag:4,naam:'ðŸ§˜ Rustdag',dagType:'rest',oefeningen:[]},
+    {dag:4,naam:'🧘 Rustdag',dagType:'rest',oefeningen:[]},
     {dag:5,naam:'Lower Body + Core',dagType:'lower-core',oefeningen:[
       {id:'squats',sets:3,reps:'12 reps',rust:60},
       {id:'lunges',sets:3,reps:'8 per been',rust:60},
@@ -215,7 +214,7 @@ const WORKOUT_PLAN = {
       {id:'battle-ropes',sets:3,reps:'20 sec',rust:40},
       {id:'farmers-walk',sets:2,reps:'20 sec',rust:45}
     ]},
-    {dag:7,naam:'ðŸš¶ Actief Herstel',dagType:'active-rest',oefeningen:[]}
+    {dag:7,naam:'🚶 Actief Herstel',dagType:'active-rest',oefeningen:[]}
   ],
   // Week 2 - Basis+ (iets meer volume, techniek verfijnen)
   2:[
@@ -246,7 +245,7 @@ const WORKOUT_PLAN = {
       {id:'woodchoppers',sets:3,reps:'10 per kant',rust:30},
       {id:'bird-dog',sets:3,reps:'10 per kant',rust:25}
     ]},
-    {dag:4,naam:'ðŸ§˜ Rustdag',dagType:'rest',oefeningen:[]},
+    {dag:4,naam:'🧘 Rustdag',dagType:'rest',oefeningen:[]},
     {dag:5,naam:'Lower Body + Core',dagType:'lower-core',oefeningen:[
       {id:'squats',sets:3,reps:'14 reps',rust:50},
       {id:'deadlifts',sets:3,reps:'10 reps',rust:60},
@@ -265,7 +264,7 @@ const WORKOUT_PLAN = {
       {id:'high-knees',sets:3,reps:'25 sec',rust:35},
       {id:'farmers-walk',sets:2,reps:'30 sec',rust:40}
     ]},
-    {dag:7,naam:'ðŸš¶ Actief Herstel',dagType:'active-rest',oefeningen:[]}
+    {dag:7,naam:'🚶 Actief Herstel',dagType:'active-rest',oefeningen:[]}
   ],
   // Week 3 - Intensief (meer sets, kortere rust, zwaardere varianten)
   3:[
@@ -297,7 +296,7 @@ const WORKOUT_PLAN = {
       {id:'woodchoppers',sets:3,reps:'12 per kant',rust:25},
       {id:'hanging-knee',sets:3,reps:'8 reps',rust:30}
     ]},
-    {dag:4,naam:'ðŸ§˜ Rustdag',dagType:'rest',oefeningen:[]},
+    {dag:4,naam:'🧘 Rustdag',dagType:'rest',oefeningen:[]},
     {dag:5,naam:'Lower Body + Core',dagType:'lower-core',oefeningen:[
       {id:'squats',sets:4,reps:'14 reps',rust:45},
       {id:'deadlifts',sets:4,reps:'10 reps',rust:50},
@@ -317,7 +316,7 @@ const WORKOUT_PLAN = {
       {id:'battle-ropes',sets:3,reps:'30 sec',rust:30},
       {id:'sprint-intervals',sets:4,reps:'20 sec sprint',rust:30}
     ]},
-    {dag:7,naam:'ðŸš¶ Actief Herstel',dagType:'active-rest',oefeningen:[]}
+    {dag:7,naam:'🚶 Actief Herstel',dagType:'active-rest',oefeningen:[]}
   ],
   // Week 4 - Maximaal (hoogste intensiteit)
   4:[
@@ -351,7 +350,7 @@ const WORKOUT_PLAN = {
       {id:'plank-shoulder-tap',sets:3,reps:'20 reps',rust:20},
       {id:'woodchoppers',sets:3,reps:'14 per kant',rust:20}
     ]},
-    {dag:4,naam:'ðŸ§˜ Rustdag',dagType:'rest',oefeningen:[]},
+    {dag:4,naam:'🧘 Rustdag',dagType:'rest',oefeningen:[]},
     {dag:5,naam:'Lower Body Maximum + Core',dagType:'lower-core',oefeningen:[
       {id:'squats',sets:4,reps:'16 reps',rust:40},
       {id:'deadlifts',sets:4,reps:'12 reps',rust:45},
@@ -362,7 +361,7 @@ const WORKOUT_PLAN = {
       {id:'flutter-kicks',sets:3,reps:'35 sec',rust:20},
       {id:'hollow-body',sets:3,reps:'20 sec',rust:25}
     ]},
-    {dag:6,naam:'ðŸ† Grand Finale Circuit',dagType:'hiit-circuit',oefeningen:[
+    {dag:6,naam:'🏆 Grand Finale Circuit',dagType:'hiit-circuit',oefeningen:[
       {id:'burpees',sets:4,reps:'14 reps',rust:25},
       {id:'kettlebell-swings',sets:4,reps:'18 reps',rust:25},
       {id:'box-jumps',sets:4,reps:'10 reps',rust:30},
@@ -372,7 +371,7 @@ const WORKOUT_PLAN = {
       {id:'mountain-climbers',sets:4,reps:'40 sec',rust:20},
       {id:'plank',sets:3,reps:'60 sec',rust:15}
     ]},
-    {dag:7,naam:'ðŸš¶ Actief Herstel',dagType:'active-rest',oefeningen:[]}
+    {dag:7,naam:'🚶 Actief Herstel',dagType:'active-rest',oefeningen:[]}
   ]
 };
 
@@ -396,7 +395,7 @@ const INJURY_GYM_MAP = {
   nek: ['Shoulder press machine']
 };
 const INJURY_ALTERNATIVES = {
-  'squats': {naam:'Wall sit (isometrisch)',reden:'Minder belasting op knieÃ«n'},
+  'squats': {naam:'Wall sit (isometrisch)',reden:'Minder belasting op knieën'},
   'lunges': {naam:'Zittende beenlift',reden:'Geen knie/heup belasting'},
   'push-ups': {naam:'Chest fly (liggend, dumbbells)',reden:'Minder pols/schouder belasting'},
   'pull-ups': {naam:'Bicep curls (dumbbells)',reden:'Minder schouder belasting'},
@@ -418,9 +417,9 @@ const INJURY_ALTERNATIVES = {
 
 // ===== DEFAULT FYSIO EXERCISES =====
 const DEFAULT_FYSIO_EXERCISES = [
-  {id:'fysio_1',naam:'Schouder interne rotatie',beschrijving:'Lig op je zij met elleboog op 90Â°. Draai je onderarm langzaam naar je buik en terug.',sets:3,reps:15,tijd:null,frequentie:'dagelijks',notities:'Gebruik licht weerstandsband indien mogelijk',actief:true},
-  {id:'fysio_2',naam:'Knie stabilisatie single leg squat',beschrijving:'Sta op Ã©Ã©n been, zak langzaam door je knie tot ~45Â°. Houd je balans en kom terug omhoog.',sets:3,reps:10,tijd:null,frequentie:'3x per week',notities:'Focus op stabiliteit, niet diepte',actief:true},
-  {id:'fysio_3',naam:'Rug: cat-cow stretch',beschrijving:'Op handen en knieÃ«n. Wissel tussen rug hol maken (cow) en rug rond maken (cat). Langzaam ademen.',sets:2,reps:10,tijd:null,frequentie:'dagelijks',notities:'Rustig tempo, synchroniseer met ademhaling',actief:true}
+  {id:'fysio_1',naam:'Schouder interne rotatie',beschrijving:'Lig op je zij met elleboog op 90°. Draai je onderarm langzaam naar je buik en terug.',sets:3,reps:15,tijd:null,frequentie:'dagelijks',notities:'Gebruik licht weerstandsband indien mogelijk',actief:true},
+  {id:'fysio_2',naam:'Knie stabilisatie single leg squat',beschrijving:'Sta op één been, zak langzaam door je knie tot ~45°. Houd je balans en kom terug omhoog.',sets:3,reps:10,tijd:null,frequentie:'3x per week',notities:'Focus op stabiliteit, niet diepte',actief:true},
+  {id:'fysio_3',naam:'Rug: cat-cow stretch',beschrijving:'Op handen en knieën. Wissel tussen rug hol maken (cow) en rug rond maken (cat). Langzaam ademen.',sets:2,reps:10,tijd:null,frequentie:'dagelijks',notities:'Rustig tempo, synchroniseer met ademhaling',actief:true}
 ];
 
 // ===== PERIMENOPAUZE WORKOUT ADJUSTMENTS =====
@@ -442,18 +441,18 @@ function adjustWorkoutForPeri(oefeningen) {
 
 // ===== ACTIVITY PRESETS =====
 const ACTIVITY_TYPES = {
-  hardlopen:{emoji:'ðŸƒ',naam:'Hardlopen',kcalPer30:300},
-  fietsen:{emoji:'ðŸš´',naam:'Fietsen',kcalPer30:250},
-  padel:{emoji:'ðŸŽ¾',naam:'Padel',kcalPer30:350},
-  tennis:{emoji:'ðŸŽ¾',naam:'Tennis',kcalPer30:300},
-  voetbal:{emoji:'âš½',naam:'Voetbal',kcalPer30:300},
-  zwemmen:{emoji:'ðŸŠ',naam:'Zwemmen',kcalPer30:250},
-  wandelen:{emoji:'ðŸš¶',naam:'Wandelen',kcalPer30:150},
-  yoga:{emoji:'ðŸ§˜',naam:'Yoga',kcalPer30:200},
-  stretchen:{emoji:'ðŸ¤¸',naam:'Stretchen',kcalPer30:100},
-  foam_rolling:{emoji:'ðŸ§±',naam:'Foam rolling',kcalPer30:80},
-  mobiliteit:{emoji:'ðŸ”„',naam:'Mobiliteit',kcalPer30:100},
-  overig:{emoji:'ðŸ‹ï¸',naam:'Overig',kcalPer30:200}
+  hardlopen:{emoji:'🏃',naam:'Hardlopen',kcalPer30:300},
+  fietsen:{emoji:'🚴',naam:'Fietsen',kcalPer30:250},
+  padel:{emoji:'🎾',naam:'Padel',kcalPer30:350},
+  tennis:{emoji:'🎾',naam:'Tennis',kcalPer30:300},
+  voetbal:{emoji:'⚽',naam:'Voetbal',kcalPer30:300},
+  zwemmen:{emoji:'🏊',naam:'Zwemmen',kcalPer30:250},
+  wandelen:{emoji:'🚶',naam:'Wandelen',kcalPer30:150},
+  yoga:{emoji:'🧘',naam:'Yoga',kcalPer30:200},
+  stretchen:{emoji:'🤸',naam:'Stretchen',kcalPer30:100},
+  foam_rolling:{emoji:'🧱',naam:'Foam rolling',kcalPer30:80},
+  mobiliteit:{emoji:'🔄',naam:'Mobiliteit',kcalPer30:100},
+  overig:{emoji:'🏋️',naam:'Overig',kcalPer30:200}
 };
 
 // ===== IF SCHEMAS =====
@@ -502,14 +501,14 @@ let fysioLog = ld('fysioLog', {}); // { "2024-03-18": { "fysio_1": true, "fysio_
 
 // ===== HABIT TRACKER STATE =====
 const DEFAULT_HABITS = [
-  {id:'h_train',emoji:'ðŸ’ª',naam:'Getraind vandaag',frequentie:'dagelijks'},
-  {id:'h_food',emoji:'ðŸ¥—',naam:'Gezond gegeten',frequentie:'dagelijks'},
-  {id:'h_if',emoji:'ðŸ•',naam:'IF schema gehaald',frequentie:'dagelijks'},
-  {id:'h_water',emoji:'ðŸ’§',naam:'8 glazen water gedronken',frequentie:'dagelijks'},
-  {id:'h_stretch',emoji:'ðŸ§˜',naam:'Gestretcht / yoga',frequentie:'dagelijks'},
-  {id:'h_steps',emoji:'ðŸ‘£',naam:'10.000 stappen gehaald',frequentie:'dagelijks'},
-  {id:'h_sleep',emoji:'ðŸ˜´',naam:'7+ uur geslapen',frequentie:'dagelijks'},
-  {id:'h_fysio',emoji:'ðŸ¥',naam:'Fysio oefeningen gedaan',frequentie:'dagelijks'}
+  {id:'h_train',emoji:'💪',naam:'Getraind vandaag',frequentie:'dagelijks'},
+  {id:'h_food',emoji:'🥗',naam:'Gezond gegeten',frequentie:'dagelijks'},
+  {id:'h_if',emoji:'🕐',naam:'IF schema gehaald',frequentie:'dagelijks'},
+  {id:'h_water',emoji:'💧',naam:'8 glazen water gedronken',frequentie:'dagelijks'},
+  {id:'h_stretch',emoji:'🧘',naam:'Gestretcht / yoga',frequentie:'dagelijks'},
+  {id:'h_steps',emoji:'👣',naam:'10.000 stappen gehaald',frequentie:'dagelijks'},
+  {id:'h_sleep',emoji:'😴',naam:'7+ uur geslapen',frequentie:'dagelijks'},
+  {id:'h_fysio',emoji:'🏥',naam:'Fysio oefeningen gedaan',frequentie:'dagelijks'}
 ];
 let habitList = ld('habitList', [...DEFAULT_HABITS]);
 let habitLog = ld('habitLog', {}); // { "2024-03-18": { "h_train": true, "h_food": false, ... } }
@@ -527,14 +526,14 @@ let gymLog = ld('gymLog', {}); // { "2024-03-18": { "Leg press": {gewicht:80,set
 
 // ===== STRETCH ROUTINE (for rest days) =====
 const STRETCH_ROUTINE = [
-  {naam:'Hamstring stretch',duur:'30s per been',emoji:'ðŸ¦µ'},
-  {naam:'Quad stretch',duur:'30s per been',emoji:'ðŸ¦µ'},
-  {naam:'Hip flexor stretch',duur:'30s per been',emoji:'ðŸ¦µ'},
-  {naam:'Schouder stretch',duur:'30s per arm',emoji:'ðŸ’ª'},
-  {naam:'Cat-cow stretch',duur:'10 herhalingen',emoji:'ðŸ±'},
-  {naam:'Child\'s pose',duur:'60s',emoji:'ðŸ§’'},
-  {naam:'Pigeon pose',duur:'30s per been',emoji:'ðŸ¦'},
-  {naam:'Downward dog',duur:'45s',emoji:'ðŸ•'}
+  {naam:'Hamstring stretch',duur:'30s per been',emoji:'🦵'},
+  {naam:'Quad stretch',duur:'30s per been',emoji:'🦵'},
+  {naam:'Hip flexor stretch',duur:'30s per been',emoji:'🦵'},
+  {naam:'Schouder stretch',duur:'30s per arm',emoji:'💪'},
+  {naam:'Cat-cow stretch',duur:'10 herhalingen',emoji:'🐱'},
+  {naam:'Child\'s pose',duur:'60s',emoji:'🧒'},
+  {naam:'Pigeon pose',duur:'30s per been',emoji:'🐦'},
+  {naam:'Downward dog',duur:'45s',emoji:'🐕'}
 ];
 
 // ===== UTILITY =====
@@ -665,7 +664,7 @@ function getIFStatus(){
     const uren = Math.floor(urenTotWissel);
     const minuten = Math.round((urenTotWissel - uren) * 60);
     statusText = `Eetvenster open: nog ${uren}u ${minuten}m`;
-    statusEmoji = 'ðŸŸ¢';
+    statusEmoji = '🟢';
   } else {
     // Vasten - bereken uren tot eetvenster
     let uurTotStart = eetStart - currentHour;
@@ -674,7 +673,7 @@ function getIFStatus(){
     const uren = Math.floor(urenTotWissel);
     const minuten = Math.round((urenTotWissel - uren) * 60);
     statusText = `Vasten: nog ${uren}u ${minuten}m`;
-    statusEmoji = 'ðŸ”´';
+    statusEmoji = '🔴';
   }
   
   // Bereken vasten duur als actief
@@ -716,7 +715,7 @@ function toggleVasten(){
   } else {
     ifState.vastenActief = true;
     ifState.vastenStartTijd = Date.now();
-    toast('Vasten gestart! ðŸ’ª');
+    toast('Vasten gestart! 💪');
   }
   sv('ifState', ifState);
   renderVoeding();
@@ -726,7 +725,7 @@ function logIFDag(gehaald){
   ifState.log[today()] = gehaald;
   sv('ifState', ifState);
   renderVoeding();
-  toast(gehaald ? 'IF schema gehaald! ðŸŽ‰' : 'Niet gehaald, morgen beter! ðŸ’ª');
+  toast(gehaald ? 'IF schema gehaald! 🎉' : 'Niet gehaald, morgen beter! 💪');
 }
 
 function updateIFSchema(schema){
@@ -803,19 +802,19 @@ function renderDashboard(){
   const todayWorkout = getTodayWorkoutType();
 
   // Update header
-  document.getElementById('headerSubtitle').textContent = `Dag ${dayNumber} van 28 â€¢ Week ${week}`;
+  document.getElementById('headerSubtitle').textContent = `Dag ${dayNumber} van 28 • Week ${week}`;
 
   let html = '';
 
   // Perimenopauze banner
   if(isPerimenopauze()) {
-    html += `<div class="peri-banner"><span class="peri-icon">ðŸŒ¸</span> Perimenopauze modus â€” aangepast programma voor optimale vetverbranding</div>`;
+    html += `<div class="peri-banner"><span class="peri-icon">🌸</span> Perimenopauze modus — aangepast programma voor optimale vetverbranding</div>`;
   }
 
   // Welcome
   html += `<div class="card" style="text-align:center;padding:20px">
-    <div style="font-size:1.3rem;font-weight:800;margin-bottom:4px">ðŸ‘‹ Hey ${escHtml(profile.naam)}!</div>
-    <div style="color:var(--text-light);font-size:.85rem">Dag ${dayNumber} van 28 â€” Week ${week}, dag ${dayInWeek}</div>
+    <div style="font-size:1.3rem;font-weight:800;margin-bottom:4px">👋 Hey ${escHtml(profile.naam)}!</div>
+    <div style="color:var(--text-light);font-size:.85rem">Dag ${dayNumber} van 28 — Week ${week}, dag ${dayInWeek}</div>
     <div class="progress-bar" style="height:12px;margin-top:12px">
       <div class="progress-fill orange" style="width:${progressPct}%"></div>
     </div>
@@ -831,10 +830,10 @@ function renderDashboard(){
       <div class="stat-icon">${ifStatus.statusEmoji}</div>
       <div class="stat-value" style="font-size:1rem;color:${ifStatus.isEetvenster ? '#43a047' : '#e53935'}">${ifStatus.isEetvenster ? 'Eetvenster' : 'Vasten'}</div>
       <div class="stat-label">${ifStatus.statusText}</div>
-      ${ifStatus.streak > 0 ? `<div style="font-size:.7rem;color:var(--accent);margin-top:2px">ðŸ”¥ ${ifStatus.streak} dagen streak</div>` : ''}
+      ${ifStatus.streak > 0 ? `<div style="font-size:.7rem;color:var(--accent);margin-top:2px">🔥 ${ifStatus.streak} dagen streak</div>` : ''}
     </div>
     <div class="stat-box" style="border:2px solid ${todayWorkout ? todayWorkout.color || 'var(--accent)' : '#757575'}">
-      <div class="stat-icon">${todayWorkout ? todayWorkout.emoji : 'ðŸ§˜'}</div>
+      <div class="stat-icon">${todayWorkout ? todayWorkout.emoji : '🧘'}</div>
       <div class="stat-value" style="font-size:.85rem;color:${todayWorkout ? todayWorkout.color || 'var(--accent)' : '#757575'}">${todayWorkout ? todayWorkout.label : 'Rustdag'}</div>
       <div class="stat-label">Training vandaag</div>
     </div>
@@ -843,22 +842,22 @@ function renderDashboard(){
   // Live counters
   html += `<div class="stat-grid">
     <div class="stat-box accent">
-      <div class="stat-icon">ðŸ½ï¸</div>
+      <div class="stat-icon">🍽️</div>
       <div class="stat-value" style="color:${remainingKcal < 0 ? 'var(--red)' : 'var(--accent)'}">${remainingKcal > 0 ? remainingKcal : Math.abs(remainingKcal)}</div>
       <div class="stat-label">${remainingKcal >= 0 ? 'kcal nog eten' : 'kcal OVER budget'}</div>
     </div>
     <div class="stat-box" style="border:2px solid #43a047">
-      <div class="stat-icon">ðŸ’ª</div>
+      <div class="stat-icon">💪</div>
       <div class="stat-value" style="color:#43a047">${remainingMin}</div>
       <div class="stat-label">min nog trainen</div>
     </div>
     <div class="stat-box" style="border:2px solid #1e88e5">
-      <div class="stat-icon">ðŸ‘£</div>
+      <div class="stat-icon">👣</div>
       <div class="stat-value" style="color:#1e88e5">${remainingSteps.toLocaleString()}</div>
       <div class="stat-label">stappen te gaan</div>
     </div>
     <div class="stat-box" style="border:2px solid #42a5f5">
-      <div class="stat-icon">ðŸ’§</div>
+      <div class="stat-icon">💧</div>
       <div class="stat-value" style="color:#42a5f5">${getTodayWater()}/8</div>
       <div class="stat-label">glazen water</div>
     </div>
@@ -868,11 +867,11 @@ function renderDashboard(){
   if(remainingKcal < -200){
     const extraMin = Math.round(Math.abs(remainingKcal) / 8);
     html += `<div class="card" style="background:#fff3e0;border-left:4px solid var(--accent)">
-      <div style="font-size:.85rem">âš ï¸ Je zit <strong>${Math.abs(remainingKcal)} kcal</strong> over je budget. Nog <strong>${extraMin} minuten</strong> extra trainen aanbevolen!</div>
+      <div style="font-size:.85rem">⚠️ Je zit <strong>${Math.abs(remainingKcal)} kcal</strong> over je budget. Nog <strong>${extraMin} minuten</strong> extra trainen aanbevolen!</div>
     </div>`;
   } else if(extraBurn.total > 100){
     html += `<div class="card" style="background:#e8f5e9;border-left:4px solid #43a047">
-      <div style="font-size:.85rem">ðŸ”¥ Extra verbranding: <strong>${extraBurn.total} kcal</strong> (stappen: ${extraBurn.stepBurn}, activiteit: ${extraBurn.actBurn}, workout: ${extraBurn.woBurn}). Je mag ${extraBurn.total} kcal extra eten!</div>
+      <div style="font-size:.85rem">🔥 Extra verbranding: <strong>${extraBurn.total} kcal</strong> (stappen: ${extraBurn.stepBurn}, activiteit: ${extraBurn.actBurn}, workout: ${extraBurn.woBurn}). Je mag ${extraBurn.total} kcal extra eten!</div>
     </div>`;
   }
 
@@ -881,7 +880,7 @@ function renderDashboard(){
   const habitScoreColor = getHabitScoreColor(habitScore.pct);
   const longestStreak = getLongestActiveStreak();
   html += `<div class="card">
-    <h3>âœ… Habits vandaag</h3>
+    <h3>✅ Habits vandaag</h3>
     <div class="habit-dashboard-widget">
       <div class="hdw-score" style="color:${habitScoreColor}">${habitScore.done}/${habitScore.total}</div>
       <div class="hdw-bar">
@@ -889,20 +888,20 @@ function renderDashboard(){
       </div>
       <span style="font-size:.8rem;font-weight:700;color:${habitScoreColor}">${habitScore.pct}%</span>
     </div>
-    ${longestStreak > 0 ? `<div style="font-size:.8rem;color:var(--accent);margin-top:6px">ðŸ”¥ Langste actieve streak: ${longestStreak} dagen</div>` : ''}
+    ${longestStreak > 0 ? `<div style="font-size:.8rem;color:var(--accent);margin-top:6px">🔥 Langste actieve streak: ${longestStreak} dagen</div>` : ''}
   </div>`;
 
   // Today summary
   html += `<div class="card">
-    <h3>ðŸ“‹ Vandaag</h3>
+    <h3>📋 Vandaag</h3>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;font-size:.85rem">
-      <div>ðŸ½ï¸ Gegeten: <strong>${totals.kcal} kcal</strong></div>
-      <div>ðŸ”¥ Verbrand: <strong>${extraBurn.total} kcal</strong></div>
-      <div>ðŸ‘£ Stappen: <strong>${stepsToday.toLocaleString()}</strong></div>
-      <div>ðŸ’ª Training: <strong>${woMinutes} min</strong></div>
+      <div>🍽️ Gegeten: <strong>${totals.kcal} kcal</strong></div>
+      <div>🔥 Verbrand: <strong>${extraBurn.total} kcal</strong></div>
+      <div>👣 Stappen: <strong>${stepsToday.toLocaleString()}</strong></div>
+      <div>💪 Training: <strong>${woMinutes} min</strong></div>
     </div>
     <div style="margin-top:8px;font-size:.8rem;color:var(--text-light)">
-      Calorie balans: ${calcTDEE()} (TDEE) + ${extraBurn.total} (extra) âˆ’ ${totals.kcal} (gegeten) = <strong style="color:${adjustedTarget - totals.kcal >= 0 ? 'var(--green)' : 'var(--red)'}">${adjustedTarget - totals.kcal} kcal</strong>
+      Calorie balans: ${calcTDEE()} (TDEE) + ${extraBurn.total} (extra) − ${totals.kcal} (gegeten) = <strong style="color:${adjustedTarget - totals.kcal >= 0 ? 'var(--green)' : 'var(--red)'}">${adjustedTarget - totals.kcal} kcal</strong>
     </div>
   </div>`;
 
@@ -917,12 +916,12 @@ function renderDashboard(){
   const weightEntries = Object.entries(weightLog).sort((a,b) => a[0].localeCompare(b[0]));
   if(weightEntries.length > 0){
     html += `<div class="card">
-      <h3>âš–ï¸ Gewichtsverloop</h3>
+      <h3>⚖️ Gewichtsverloop</h3>
       <div class="chart-container"><canvas id="weightChart" height="150"></canvas></div>
     </div>`;
   } else {
     html += `<div class="card" style="text-align:center">
-      <div style="font-size:1.5rem;margin-bottom:4px">âš–ï¸</div>
+      <div style="font-size:1.5rem;margin-bottom:4px">⚖️</div>
       <div style="font-size:.85rem;color:var(--text-light)">Log je gewicht bij Profiel om de grafiek te zien</div>
     </div>`;
   }
@@ -1025,7 +1024,7 @@ function renderVoeding(){
 
   // === IF TRACKER ===
   html += `<div class="card" style="border-left:4px solid ${ifStatus.isEetvenster ? '#43a047' : '#e53935'}">
-    <h3>â° Intermittent Fasting</h3>
+    <h3>⏰ Intermittent Fasting</h3>
     
     <div style="display:flex;gap:6px;margin:8px 0;flex-wrap:wrap">
       ${Object.entries(IF_SCHEMAS).map(([key, s]) => 
@@ -1073,8 +1072,8 @@ function renderVoeding(){
         <div class="if-bar-marker" style="left:${getIFProgress24h()}%"></div>
       </div>
       <div style="display:flex;justify-content:center;gap:16px;margin-top:4px;font-size:.7rem">
-        <span>ðŸŸ¢ Eetvenster (${Math.round(ifState.eetStart)}:00-${Math.round(ifState.eetEnd)}:00)</span>
-        <span>ðŸ”´ Vasten</span>
+        <span>🟢 Eetvenster (${Math.round(ifState.eetStart)}:00-${Math.round(ifState.eetEnd)}:00)</span>
+        <span>🔴 Vasten</span>
       </div>
     </div>
 
@@ -1122,7 +1121,7 @@ function renderVoeding(){
         })()}
       </svg>
       <div class="if-clock-center">
-        <div class="if-clock-status" style="color:${ifStatus.isEetvenster ? '#43a047' : '#e53935'}">${ifStatus.isEetvenster ? 'ðŸ½ï¸ Eten' : 'ðŸš« Vasten'}</div>
+        <div class="if-clock-status" style="color:${ifStatus.isEetvenster ? '#43a047' : '#e53935'}">${ifStatus.isEetvenster ? '🍽️ Eten' : '🚫 Vasten'}</div>
         <div class="if-clock-time">${IF_SCHEMAS[ifState.schema]?.label || ifState.schema}</div>
       </div>
     </div>
@@ -1130,24 +1129,24 @@ function renderVoeding(){
     <!-- Vasten timer + controls -->
     <div style="display:flex;gap:8px;margin:8px 0">
       <button class="btn ${ifState.vastenActief ? 'btn-danger' : 'btn-primary'} btn-block" onclick="toggleVasten()">
-        ${ifState.vastenActief ? 'â¹ï¸ Stop vasten' : 'â–¶ï¸ Start vasten'}
+        ${ifState.vastenActief ? '⏹️ Stop vasten' : '▶️ Start vasten'}
       </button>
     </div>
-    ${ifState.vastenActief ? `<div style="text-align:center;font-size:.85rem;color:var(--text-light)">â±ï¸ Je vast nu ${Math.floor(ifStatus.vastenDuur)}u ${Math.round((ifStatus.vastenDuur % 1) * 60)}m</div>` : ''}
+    ${ifState.vastenActief ? `<div style="text-align:center;font-size:.85rem;color:var(--text-light)">⏱️ Je vast nu ${Math.floor(ifStatus.vastenDuur)}u ${Math.round((ifStatus.vastenDuur % 1) * 60)}m</div>` : ''}
 
     <!-- Dagelijks loggen -->
     <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
       <span style="font-size:.8rem;flex:1">IF gehaald vandaag?</span>
-      <button class="btn btn-green btn-small ${ifState.log[today()] === true ? '' : 'btn-secondary'}" onclick="logIFDag(true)" style="padding:6px 14px;min-height:32px">âœ… Ja</button>
-      <button class="btn btn-danger btn-small ${ifState.log[today()] === false ? '' : 'btn-secondary'}" onclick="logIFDag(false)" style="padding:6px 14px;min-height:32px">âŒ Nee</button>
+      <button class="btn btn-green btn-small ${ifState.log[today()] === true ? '' : 'btn-secondary'}" onclick="logIFDag(true)" style="padding:6px 14px;min-height:32px">✅ Ja</button>
+      <button class="btn btn-danger btn-small ${ifState.log[today()] === false ? '' : 'btn-secondary'}" onclick="logIFDag(false)" style="padding:6px 14px;min-height:32px">❌ Nee</button>
     </div>
 
-    ${ifStatus.streak > 0 ? `<div style="text-align:center;margin-top:8px;font-size:.9rem;font-weight:700;color:var(--accent)">ðŸ”¥ ${ifStatus.streak} dagen op rij gevast!</div>` : ''}
+    ${ifStatus.streak > 0 ? `<div style="text-align:center;margin-top:8px;font-size:.9rem;font-weight:700;color:var(--accent)">🔥 ${ifStatus.streak} dagen op rij gevast!</div>` : ''}
   </div>`;
 
   // Budget overview
   html += `<div class="card">
-    <h3>ðŸ“Š Caloriebudget vandaag</h3>
+    <h3>📊 Caloriebudget vandaag</h3>
     <div style="display:flex;justify-content:space-between;align-items:baseline;margin:8px 0">
       <span style="font-size:1.5rem;font-weight:800;color:var(--accent)">${totals.kcal}</span>
       <span style="font-size:.85rem;color:var(--text-light)">/ ${adjustedTarget} kcal</span>
@@ -1166,22 +1165,22 @@ function renderVoeding(){
   const vetPct = macros.vet > 0 ? Math.min(100, (totals.vet / macros.vet) * 100) : 0;
 
   html += `<div class="card">
-    <h3>ðŸ¥© Macro's</h3>
+    <h3>🥩 Macro's</h3>
     <div style="margin-top:8px">
       <div style="display:flex;justify-content:space-between;font-size:.8rem;font-weight:600">
-        <span>ðŸ¥© Eiwit</span><span>${totals.eiwit}g / ${macros.eiwit}g</span>
+        <span>🥩 Eiwit</span><span>${totals.eiwit}g / ${macros.eiwit}g</span>
       </div>
       <div class="progress-bar"><div class="progress-fill orange" style="width:${eiwitPct}%"></div></div>
     </div>
     <div style="margin-top:8px">
       <div style="display:flex;justify-content:space-between;font-size:.8rem;font-weight:600">
-        <span>ðŸž Koolhydraten</span><span>${totals.koolhydraten}g / ${macros.koolhydraten}g</span>
+        <span>🍞 Koolhydraten</span><span>${totals.koolhydraten}g / ${macros.koolhydraten}g</span>
       </div>
       <div class="progress-bar"><div class="progress-fill blue" style="width:${khPct}%"></div></div>
     </div>
     <div style="margin-top:8px">
       <div style="display:flex;justify-content:space-between;font-size:.8rem;font-weight:600">
-        <span>ðŸ¥‘ Vet</span><span>${totals.vet}g / ${macros.vet}g</span>
+        <span>🥑 Vet</span><span>${totals.vet}g / ${macros.vet}g</span>
       </div>
       <div class="progress-bar"><div class="progress-fill purple" style="width:${vetPct}%"></div></div>
     </div>
@@ -1189,10 +1188,10 @@ function renderVoeding(){
 
   // Meal sections
   const mealTypes = [
-    {key:'ontbijt',emoji:'ðŸŒ…',naam:'Ontbijt'},
-    {key:'lunch',emoji:'â˜€ï¸',naam:'Lunch'},
-    {key:'diner',emoji:'ðŸŒ™',naam:'Diner'},
-    {key:'snacks',emoji:'ðŸŽ',naam:'Snacks'}
+    {key:'ontbijt',emoji:'🌅',naam:'Ontbijt'},
+    {key:'lunch',emoji:'☀️',naam:'Lunch'},
+    {key:'diner',emoji:'🌙',naam:'Diner'},
+    {key:'snacks',emoji:'🍎',naam:'Snacks'}
   ];
 
   mealTypes.forEach(mt => {
@@ -1218,15 +1217,15 @@ function renderVoeding(){
                 <span>V:${item.vet}g</span>
               </div>
             </div>
-            <button class="btn btn-danger btn-small" style="padding:4px 8px;min-height:28px;font-size:.7rem" onclick="removeMeal('${mt.key}',${idx})">âœ•</button>
+            <button class="btn btn-danger btn-small" style="padding:4px 8px;min-height:28px;font-size:.7rem" onclick="removeMeal('${mt.key}',${idx})">✕</button>
           </div>
         </div>`;
       });
     }
 
     html += `<div style="display:flex;gap:8px;margin-top:8px">
-      <button class="btn btn-primary btn-small" style="flex:1" onclick="openAddMeal('${mt.key}')">âž• Toevoegen</button>
-      <button class="btn btn-secondary btn-small" style="flex:1" onclick="openSuggestions('${mt.key}')">ðŸ’¡ Suggesties</button>
+      <button class="btn btn-primary btn-small" style="flex:1" onclick="openAddMeal('${mt.key}')">➕ Toevoegen</button>
+      <button class="btn btn-secondary btn-small" style="flex:1" onclick="openSuggestions('${mt.key}')">💡 Suggesties</button>
     </div>`;
     html += `</div>`;
   });
@@ -1234,10 +1233,10 @@ function renderVoeding(){
   // Water tracker
   const waterCount = getTodayWater();
   html += `<div class="card">
-    <h3>ðŸ’§ Water (${waterCount}/8 glazen)</h3>
+    <h3>💧 Water (${waterCount}/8 glazen)</h3>
     <div class="progress-bar" style="height:8px;margin-bottom:8px"><div class="progress-fill blue" style="width:${Math.min(100,(waterCount/8)*100)}%"></div></div>
     <div class="water-glasses">
-      ${Array.from({length:8},(_, i) => `<div class="water-glass ${i < waterCount ? 'filled' : ''}" onclick="setWater(${i+1})">ðŸ’§</div>`).join('')}
+      ${Array.from({length:8},(_, i) => `<div class="water-glass ${i < waterCount ? 'filled' : ''}" onclick="setWater(${i+1})">💧</div>`).join('')}
     </div>
   </div>`;
 
@@ -1245,7 +1244,7 @@ function renderVoeding(){
   const {dayNumber} = getWeekAndDay();
   const mealOrder = ['ontbijt','lunch','diner','snacks'];
   html += `<div class="card">
-    <h3>ðŸ“… Voorgesteld voedingsplan dag ${dayNumber}</h3>
+    <h3>📅 Voorgesteld voedingsplan dag ${dayNumber}</h3>
     <div style="font-size:.8rem;color:var(--text-light);margin-bottom:8px">Tik op een suggestie om toe te voegen</div>`;
   mealOrder.forEach(mt => {
     const suggestions = MEAL_SUGGESTIONS[mt];
@@ -1253,7 +1252,7 @@ function renderVoeding(){
     const s = suggestions[idx];
     html += `<div class="suggestion-item" onclick="quickAddMeal('${mt}',${idx})">
       <div class="si-name">${mealTypes.find(m=>m.key===mt).emoji} ${s.naam}</div>
-      <div class="si-macros">${s.kcal} kcal â€¢ E:${s.eiwit}g K:${s.koolhydraten}g V:${s.vet}g</div>
+      <div class="si-macros">${s.kcal} kcal • E:${s.eiwit}g K:${s.koolhydraten}g V:${s.vet}g</div>
     </div>`;
   });
   html += `</div>`;
@@ -1267,7 +1266,7 @@ function openAddMeal(type){
   document.getElementById('modalMealBody').innerHTML = `
     <label>Naam</label>
     <input type="text" id="mealName" placeholder="bijv. Broodje gezond">
-    <label>CalorieÃ«n (kcal)</label>
+    <label>Calorieën (kcal)</label>
     <input type="number" id="mealKcal" placeholder="300">
     <label>Eiwit (g)</label>
     <input type="number" id="mealEiwit" placeholder="20">
@@ -1276,7 +1275,7 @@ function openAddMeal(type){
     <label>Vet (g)</label>
     <input type="number" id="mealVet" placeholder="10">
     <div style="margin-top:16px">
-      <button class="btn btn-primary btn-block" onclick="saveMeal('${type}')">ðŸ’¾ Toevoegen</button>
+      <button class="btn btn-primary btn-block" onclick="saveMeal('${type}')">💾 Toevoegen</button>
     </div>
   `;
   openModal('modalMeal');
@@ -1321,12 +1320,12 @@ function quickAddMeal(type, sugIdx){
 
 function openSuggestions(type){
   const typeNames = {ontbijt:'Ontbijt',lunch:'Lunch',diner:'Diner',snacks:'Snacks'};
-  document.getElementById('modalSuggestionsTitle').textContent = `ðŸ’¡ ${typeNames[type]} suggesties`;
+  document.getElementById('modalSuggestionsTitle').textContent = `💡 ${typeNames[type]} suggesties`;
   const suggestions = MEAL_SUGGESTIONS[type];
   document.getElementById('modalSuggestionsBody').innerHTML = suggestions.map((s, i) =>
     `<div class="suggestion-item" onclick="addSuggestion('${type}',${i})">
       <div class="si-name">${s.naam}</div>
-      <div class="si-macros">${s.kcal} kcal â€¢ Eiwit: ${s.eiwit}g â€¢ Koolhydraten: ${s.koolhydraten}g â€¢ Vet: ${s.vet}g</div>
+      <div class="si-macros">${s.kcal} kcal • Eiwit: ${s.eiwit}g • Koolhydraten: ${s.koolhydraten}g • Vet: ${s.vet}g</div>
     </div>`
   ).join('');
   openModal('modalSuggestions');
@@ -1362,24 +1361,24 @@ function renderWorkouts(){
   // === EFFECTIVITEIT INFO (uitklapbaar) ===
   html += `<div class="card" style="border-left:4px solid #1e88e5">
     <div class="collapsible-header" onclick="toggleCollapsible(this)">
-      <h3 style="margin:0">ðŸ’¡ Waarom niet alleen buikoefeningen?</h3>
-      <span class="collapsible-arrow">â–¼</span>
+      <h3 style="margin:0">💡 Waarom niet alleen buikoefeningen?</h3>
+      <span class="collapsible-arrow">▼</span>
     </div>
     <div class="collapsible-body">
       <div style="padding-top:12px;font-size:.85rem;line-height:1.6">
-        <p style="margin-bottom:10px"><strong>ðŸ‹ï¸ Compound exercises verbranden meer calorieÃ«n</strong><br>
-        Squats, deadlifts en push-ups activeren grote spiergroepen tegelijk. Dit verbrandt tot 3x meer calorieÃ«n dan alleen buikoefeningen. Meer spiermassa = hoger basaalmetabolisme = meer vetverbranding in rust.</p>
+        <p style="margin-bottom:10px"><strong>🏋️ Compound exercises verbranden meer calorieën</strong><br>
+        Squats, deadlifts en push-ups activeren grote spiergroepen tegelijk. Dit verbrandt tot 3x meer calorieën dan alleen buikoefeningen. Meer spiermassa = hoger basaalmetabolisme = meer vetverbranding in rust.</p>
         
-        <p style="margin-bottom:10px"><strong>ðŸ”¥ HIIT verhoogt je metabolisme tot 24 uur</strong><br>
-        High Intensity Interval Training zorgt voor het EPOC-effect (Excess Post-exercise Oxygen Consumption). Je lichaam verbrandt tot 24 uur na de training extra calorieÃ«n â€” het zogenaamde "afterburn effect".</p>
+        <p style="margin-bottom:10px"><strong>🔥 HIIT verhoogt je metabolisme tot 24 uur</strong><br>
+        High Intensity Interval Training zorgt voor het EPOC-effect (Excess Post-exercise Oxygen Consumption). Je lichaam verbrandt tot 24 uur na de training extra calorieën — het zogenaamde "afterburn effect".</p>
         
-        <p style="margin-bottom:10px"><strong>ðŸŽ¯ Core training is belangrijk, maar...</strong><br>
+        <p style="margin-bottom:10px"><strong>🎯 Core training is belangrijk, maar...</strong><br>
         Je kunt geen vet "spot reducen". 1000 crunches per dag geven je sterke buikspieren, maar als er een laag vet overheen zit, zie je er niets van. Je moet EERST het vetpercentage omlaag.</p>
         
-        <p style="margin-bottom:10px"><strong>âš¡ De winnende combinatie</strong><br>
+        <p style="margin-bottom:10px"><strong>⚡ De winnende combinatie</strong><br>
         Compound oefeningen + HIIT + core training + calorie deficit = het snelste resultaat. Dit programma combineert alle vier!</p>
         
-        <p style="margin-bottom:10px"><strong>â° Intermittent Fasting helpt</strong><br>
+        <p style="margin-bottom:10px"><strong>⏰ Intermittent Fasting helpt</strong><br>
         IF verbetert insulinegevoeligheid en stimuleert vetverbranding. In combinatie met training en een calorie deficit is het een krachtig hulpmiddel. Gebruik de IF tracker bij Voeding!</p>
       </div>
     </div>
@@ -1387,9 +1386,9 @@ function renderWorkouts(){
 
   // Sub-tabs: Trainingsschema vs Sportschool vs Fysio
   html += `<div class="gym-sub-tabs">
-    <div class="gym-sub-tab ${gymSubTab === 'schema' ? 'active' : ''}" onclick="gymSubTab='schema';renderWorkouts()">ðŸ“‹ Schema</div>
-    <div class="gym-sub-tab ${gymSubTab === 'sportschool' ? 'active' : ''}" onclick="gymSubTab='sportschool';renderWorkouts()">ðŸ‹ï¸ Sportschool</div>
-    <div class="gym-sub-tab ${gymSubTab === 'fysio' ? 'active' : ''}" onclick="gymSubTab='fysio';renderWorkouts()">ðŸ¥ Fysio</div>
+    <div class="gym-sub-tab ${gymSubTab === 'schema' ? 'active' : ''}" onclick="gymSubTab='schema';renderWorkouts()">📋 Schema</div>
+    <div class="gym-sub-tab ${gymSubTab === 'sportschool' ? 'active' : ''}" onclick="gymSubTab='sportschool';renderWorkouts()">🏋️ Sportschool</div>
+    <div class="gym-sub-tab ${gymSubTab === 'fysio' ? 'active' : ''}" onclick="gymSubTab='fysio';renderWorkouts()">🏥 Fysio</div>
   </div>`;
 
   // If sportschool sub-tab selected, show gym section
@@ -1440,7 +1439,7 @@ function renderWorkouts(){
     html += `<div class="card ${isDone ? 'workout-done' : ''}" style="${isToday ? 'border:2px solid var(--accent)' : ''};position:relative">
       <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
         <div>
-          <div style="font-size:.7rem;color:var(--text-light)">Dag ${globalDay} ${isToday ? 'â€¢ VANDAAG' : ''}</div>
+          <div style="font-size:.7rem;color:var(--text-light)">Dag ${globalDay} ${isToday ? '• VANDAAG' : ''}</div>
           <div style="font-weight:800;font-size:1rem">${escHtml(day.naam)}
             ${typeInfo.badge ? `<span class="day-type-badge ${typeInfo.badge}">${typeInfo.emoji} ${typeInfo.label}</span>` : ''}
           </div>
@@ -1451,8 +1450,8 @@ function renderWorkouts(){
     if(isRest){
       const isActiveRest = day.dagType === 'active-rest';
       html += `<div style="text-align:center;padding:16px;color:var(--text-light)">
-        <div style="font-size:2rem;margin-bottom:4px">${isActiveRest ? 'ðŸš¶' : 'ðŸ§˜'}</div>
-        <div>${isActiveRest ? 'Actief herstel â€” wandelen, stretchen, mobiliteit. Lichte beweging helpt bij herstel!' : 'Rustdag â€” herstel is minstens zo belangrijk!'}</div>
+        <div style="font-size:2rem;margin-bottom:4px">${isActiveRest ? '🚶' : '🧘'}</div>
+        <div>${isActiveRest ? 'Actief herstel — wandelen, stretchen, mobiliteit. Lichte beweging helpt bij herstel!' : 'Rustdag — herstel is minstens zo belangrijk!'}</div>
       </div>`;
       // Show stretch routine on rest days (dag 4 and dag 7)
       html += renderStretchRoutine();
@@ -1469,9 +1468,9 @@ function renderWorkouts(){
         const ytUrl = `https://youtube.com/results?search_query=${encodeURIComponent(exData.naam + ' exercise tutorial')}`;
         const diffLevel = exData.moeilijkheid;
         const diffBadge = diffLevel === 1 ? 'badge-easy' : diffLevel === 2 ? 'badge-medium' : 'badge-hard';
-        const diffLabel = diffLevel === 1 ? 'â­' : diffLevel === 2 ? 'â­â­' : 'â­â­â­';
+        const diffLabel = diffLevel === 1 ? '⭐' : diffLevel === 2 ? '⭐⭐' : '⭐⭐⭐';
         const catBadge = exData.categorie === 'compound' ? 'badge-compound' : exData.categorie === 'hiit' ? 'badge-hiit' : 'badge-core';
-        const catLabel = exData.categorie === 'compound' ? 'ðŸ‹ï¸ Compound' : exData.categorie === 'hiit' ? 'ðŸ”¥ HIIT' : 'ðŸŽ¯ Core';
+        const catLabel = exData.categorie === 'compound' ? '🏋️ Compound' : exData.categorie === 'hiit' ? '🔥 HIIT' : '🎯 Core';
         const borderColor = exData.categorie === 'compound' ? '#1565c0' : exData.categorie === 'hiit' ? '#c62828' : 'var(--accent)';
 
         // Injury check
@@ -1484,11 +1483,11 @@ function renderWorkouts(){
             <div style="display:flex;justify-content:space-between;align-items:flex-start">
               <div style="flex:1">
                 <div class="ex-name" style="text-decoration:line-through;color:#e53935">${escHtml(exData.naam)}</div>
-                <div style="font-size:.75rem;color:#e53935;font-weight:600;margin-top:2px">âš ï¸ Overslaan (${injNames[injuredBy] || injuredBy} blessure)</div>
+                <div style="font-size:.75rem;color:#e53935;font-weight:600;margin-top:2px">⚠️ Overslaan (${injNames[injuredBy] || injuredBy} blessure)</div>
                 ${alt ? `<div style="font-size:.8rem;color:#2e7d32;margin-top:6px;padding:6px 8px;background:#e8f5e9;border-radius:8px">
-                  âœ… Alternatief: <strong>${alt.naam}</strong><br>
+                  ✅ Alternatief: <strong>${alt.naam}</strong><br>
                   <span style="font-size:.7rem">${alt.reden}</span>
-                </div>` : `<div style="font-size:.75rem;color:#e65100;margin-top:4px">ðŸ©º Vraag je fysio voor een geschikt alternatief</div>`}
+                </div>` : `<div style="font-size:.75rem;color:#e65100;margin-top:4px">🩺 Vraag je fysio voor een geschikt alternatief</div>`}
               </div>
             </div>
           </div>`;
@@ -1498,15 +1497,15 @@ function renderWorkouts(){
               <div style="flex:1">
                 <div class="ex-name">${escHtml(exData.naam)}</div>
                 <div class="ex-meta">
-                  <span>${ex.sets} sets Ã— ${ex.reps}</span>
-                  <span>â¸ï¸ ${ex.rust}s rust</span>
+                  <span>${ex.sets} sets × ${ex.reps}</span>
+                  <span>⏸️ ${ex.rust}s rust</span>
                   <span class="badge ${catBadge}">${catLabel}</span>
                   <span>${diffLabel}</span>
                 </div>
               </div>
               <div style="display:flex;gap:4px;align-items:center">
-                ${exData.type === 'tijd' ? `<button class="btn btn-secondary btn-small" style="padding:4px 8px;min-height:28px" onclick="event.stopPropagation();openTimerForEx('${exData.naam}','${ex.reps}')">â±ï¸</button>` : ''}
-                <a href="${ytUrl}" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none;font-size:1.2rem">ðŸ“º</a>
+                ${exData.type === 'tijd' ? `<button class="btn btn-secondary btn-small" style="padding:4px 8px;min-height:28px" onclick="event.stopPropagation();openTimerForEx('${exData.naam}','${ex.reps}')">⏱️</button>` : ''}
+                <a href="${ytUrl}" target="_blank" onclick="event.stopPropagation()" style="text-decoration:none;font-size:1.2rem">📺</a>
               </div>
             </div>
           </div>`;
@@ -1515,7 +1514,7 @@ function renderWorkouts(){
 
       if(!isDone && (isToday || isPast)){
         html += `<button class="btn btn-green btn-block" style="margin-top:8px" onclick="completeWorkout('${dateStr}',${day.oefeningen.length})">
-          âœ… Workout voltooien
+          ✅ Workout voltooien
         </button>`;
       }
     }
@@ -1525,19 +1524,19 @@ function renderWorkouts(){
 
   // Custom exercises
   if(customExercises.length > 0){
-    html += `<div class="card"><h3>ðŸ‹ï¸ Eigen oefeningen</h3>`;
+    html += `<div class="card"><h3>🏋️ Eigen oefeningen</h3>`;
     customExercises.forEach((ex, i) => {
       html += `<div class="ex-card" style="border-left-color:#7b1fa2">
         <div style="display:flex;justify-content:space-between">
           <div>
             <div class="ex-name">${escHtml(ex.naam)}</div>
             <div class="ex-meta">
-              <span>${ex.sets} sets Ã— ${ex.reps}</span>
-              <span>â¸ï¸ ${ex.rust}s rust</span>
+              <span>${ex.sets} sets × ${ex.reps}</span>
+              <span>⏸️ ${ex.rust}s rust</span>
             </div>
             ${ex.beschrijving ? `<div class="ex-desc">${escHtml(ex.beschrijving)}</div>` : ''}
           </div>
-          <button class="btn btn-danger btn-small" style="padding:4px 8px;min-height:28px" onclick="removeCustomEx(${i})">âœ•</button>
+          <button class="btn btn-danger btn-small" style="padding:4px 8px;min-height:28px" onclick="removeCustomEx(${i})">✕</button>
         </div>
       </div>`;
     });
@@ -1545,7 +1544,7 @@ function renderWorkouts(){
   }
 
   html += `<button class="btn btn-secondary btn-block" onclick="openModal('modalCustomExercise')" style="margin-top:8px">
-    âž• Eigen oefening toevoegen
+    ➕ Eigen oefening toevoegen
   </button>`;
 
   document.getElementById('workoutsContent').innerHTML = html;
@@ -1569,8 +1568,8 @@ function showExerciseDetail(id){
   if(!ex) return;
   document.getElementById('modalExerciseTitle').textContent = ex.naam;
   const diffLevel = ex.moeilijkheid;
-  const diffLabel = diffLevel === 1 ? 'â­ Makkelijk' : diffLevel === 2 ? 'â­â­ Gemiddeld' : 'â­â­â­ Moeilijk';
-  const catLabel = ex.categorie === 'compound' ? 'ðŸ‹ï¸ Compound' : ex.categorie === 'hiit' ? 'ðŸ”¥ HIIT' : 'ðŸŽ¯ Core';
+  const diffLabel = diffLevel === 1 ? '⭐ Makkelijk' : diffLevel === 2 ? '⭐⭐ Gemiddeld' : '⭐⭐⭐ Moeilijk';
+  const catLabel = ex.categorie === 'compound' ? '🏋️ Compound' : ex.categorie === 'hiit' ? '🔥 HIIT' : '🎯 Core';
   const ytUrl = `https://youtube.com/results?search_query=${encodeURIComponent(ex.naam + ' exercise tutorial')}`;
 
   document.getElementById('modalExerciseBody').innerHTML = `
@@ -1579,12 +1578,12 @@ function showExerciseDetail(id){
       <span class="badge ${diffLevel === 1 ? 'badge-easy' : diffLevel === 2 ? 'badge-medium' : 'badge-hard'}">${diffLabel}</span>
     </div>
     <p style="line-height:1.6;margin-bottom:12px">${escHtml(ex.beschrijving)}</p>
-    <div style="font-size:.85rem;margin-bottom:8px"><strong>ðŸ’ª Spieren:</strong> ${escHtml(ex.spieren)}</div>
-    <div style="font-size:.85rem;margin-bottom:8px"><strong>ðŸ“ Standaard:</strong> ${ex.standaard}</div>
-    <div style="font-size:.85rem;margin-bottom:16px"><strong>â±ï¸ Type:</strong> ${ex.type === 'tijd' ? 'Tijd-gebaseerd' : 'Herhalingen'}</div>
+    <div style="font-size:.85rem;margin-bottom:8px"><strong>💪 Spieren:</strong> ${escHtml(ex.spieren)}</div>
+    <div style="font-size:.85rem;margin-bottom:8px"><strong>📏 Standaard:</strong> ${ex.standaard}</div>
+    <div style="font-size:.85rem;margin-bottom:16px"><strong>⏱️ Type:</strong> ${ex.type === 'tijd' ? 'Tijd-gebaseerd' : 'Herhalingen'}</div>
     <div style="display:flex;gap:8px">
-      <a href="${ytUrl}" target="_blank" class="btn btn-primary btn-block" style="text-decoration:none">ðŸ“º Bekijk op YouTube</a>
-      ${ex.type === 'tijd' ? `<button class="btn btn-secondary" onclick="closeModal('modalExercise');openTimerForEx('${escHtml(ex.naam)}','${ex.standaard}')">â±ï¸ Timer</button>` : ''}
+      <a href="${ytUrl}" target="_blank" class="btn btn-primary btn-block" style="text-decoration:none">📺 Bekijk op YouTube</a>
+      ${ex.type === 'tijd' ? `<button class="btn btn-secondary" onclick="closeModal('modalExercise');openTimerForEx('${escHtml(ex.naam)}','${ex.standaard}')">⏱️ Timer</button>` : ''}
     </div>
   `;
   openModal('modalExercise');
@@ -1595,7 +1594,7 @@ function completeWorkout(dateStr, exCount){
   workoutsDone[dateStr] = {done: true, minutes, timestamp: Date.now()};
   sv('workoutsDone', workoutsDone);
   renderWorkouts();
-  toast('ðŸ’ª Workout voltooid! Goed bezig!');
+  toast('💪 Workout voltooid! Goed bezig!');
 }
 
 function saveCustomExercise(){
@@ -1653,7 +1652,7 @@ function openGymLog(exerciseName){
   const pr = getGymPR(exerciseName);
   const todayEntry = gymLog[today()] && gymLog[today()][exerciseName] ? gymLog[today()][exerciseName] : null;
 
-  document.getElementById('modalGymLogTitle').textContent = 'ðŸ‹ï¸ ' + exerciseName;
+  document.getElementById('modalGymLogTitle').textContent = '🏋️ ' + exerciseName;
 
   let html = '';
 
@@ -1671,12 +1670,12 @@ function openGymLog(exerciseName){
           <input type="number" id="gymReps" value="${todayEntry ? todayEntry.reps : ''}" placeholder="km" step="0.1"></div>
       </div>
       <div class="gym-input-full">
-        <div><label style="margin:0;font-size:.7rem">CalorieÃ«n (optioneel)</label>
+        <div><label style="margin:0;font-size:.7rem">Calorieën (optioneel)</label>
           <input type="text" id="gymStand" value="${todayEntry ? escHtml(todayEntry.stand||'') : ''}" placeholder="kcal"></div>
         <div><label style="margin:0;font-size:.7rem">Notities</label>
           <input type="text" id="gymNotes" value="${todayEntry ? escHtml(todayEntry.notities||'') : ''}" placeholder="optioneel"></div>
       </div>
-      <button class="btn btn-primary btn-block" onclick="saveGymLog('${escHtml(exerciseName).replace(/'/g,"\\'")}')">ðŸ’¾ ${todayEntry ? 'Bijwerken' : 'Opslaan'}</button>
+      <button class="btn btn-primary btn-block" onclick="saveGymLog('${escHtml(exerciseName).replace(/'/g,"\\'")}')">💾 ${todayEntry ? 'Bijwerken' : 'Opslaan'}</button>
     </div>`;
   } else {
     html += `<div style="margin-bottom:16px">
@@ -1694,13 +1693,13 @@ function openGymLog(exerciseName){
         <div><label style="margin:0;font-size:.7rem">Notities</label>
           <input type="text" id="gymNotes" value="${todayEntry ? escHtml(todayEntry.notities||'') : ''}" placeholder="optioneel"></div>
       </div>
-      <button class="btn btn-primary btn-block" onclick="saveGymLog('${escHtml(exerciseName).replace(/'/g,"\\'")}')">ðŸ’¾ ${todayEntry ? 'Bijwerken' : 'Opslaan'}</button>
+      <button class="btn btn-primary btn-block" onclick="saveGymLog('${escHtml(exerciseName).replace(/'/g,"\\'")}')">💾 ${todayEntry ? 'Bijwerken' : 'Opslaan'}</button>
     </div>`;
   }
 
   // History
   if(history.length > 0){
-    html += `<h3 style="font-size:.9rem;margin-bottom:8px">ðŸ“Š Laatste ${history.length} sessies</h3>`;
+    html += `<h3 style="font-size:.9rem;margin-bottom:8px">📊 Laatste ${history.length} sessies</h3>`;
     let prevWeight = null;
     // Show newest first but compare with next entry (older)
     history.forEach((entry, i) => {
@@ -1710,14 +1709,14 @@ function openGymLog(exerciseName){
       html += `<div class="gym-history-row">
         <span style="font-size:.75rem;min-width:70px">${entry.date.slice(5)}</span>
         <span style="font-weight:700;min-width:50px">${entry.gewicht}kg</span>
-        <span style="min-width:60px">${entry.sets}Ã—${entry.reps}</span>
+        <span style="min-width:60px">${entry.sets}×${entry.reps}</span>
         <span style="font-size:.7rem;color:var(--text-light);flex:1">${entry.stand || ''}</span>
-        ${isUp ? '<span class="gym-up-arrow">â†‘</span>' : ''}
-        ${isPR && i === 0 ? '<span class="gym-pr-badge">ðŸ† PR</span>' : ''}
+        ${isUp ? '<span class="gym-up-arrow">↑</span>' : ''}
+        ${isPR && i === 0 ? '<span class="gym-pr-badge">🏆 PR</span>' : ''}
       </div>`;
     });
   } else {
-    html += `<div class="empty-state" style="padding:16px"><div class="empty-icon">ðŸ“</div><p>Nog geen historie voor deze oefening</p></div>`;
+    html += `<div class="empty-state" style="padding:16px"><div class="empty-icon">📝</div><p>Nog geen historie voor deze oefening</p></div>`;
   }
 
   document.getElementById('modalGymLogBody').innerHTML = html;
@@ -1742,7 +1741,7 @@ function saveGymLog(exerciseName){
   // Check for PR
   const pr = getGymPR(exerciseName);
   if(gewicht >= pr) {
-    toast(`ðŸ† Nieuw persoonlijk record: ${gewicht}kg voor ${exerciseName}!`);
+    toast(`🏆 Nieuw persoonlijk record: ${gewicht}kg voor ${exerciseName}!`);
   } else {
     toast('Sportschool log opgeslagen!');
   }
@@ -1774,7 +1773,7 @@ function renderGymSection(){
   let html = '';
 
   html += `<div class="card" style="border-left:4px solid #7b1fa2">
-    <h3>ðŸ‹ï¸ Sportschool Oefeningen</h3>
+    <h3>🏋️ Sportschool Oefeningen</h3>
     <div style="font-size:.8rem;color:var(--text-light);margin-bottom:12px">Tik op een oefening om gewicht, sets en reps te loggen</div>`;
 
   gymExercises.forEach((name, idx) => {
@@ -1789,7 +1788,7 @@ function renderGymSection(){
       html += `<div class="gym-exercise-card" style="opacity:.6;border-left-color:#e53935">
         <div class="gym-ex-name" style="text-decoration:line-through;color:#e53935">
           ${escHtml(name)}
-          <span style="font-size:.7rem;color:#e53935">âš ï¸ Overslaan (${injNames[gymInjured]} blessure)</span>
+          <span style="font-size:.7rem;color:#e53935">⚠️ Overslaan (${injNames[gymInjured]} blessure)</span>
         </div>
       </div>`;
       return;
@@ -1798,20 +1797,20 @@ function renderGymSection(){
     html += `<div class="gym-exercise-card" onclick="openGymLog('${escHtml(name).replace(/'/g,"\\'")}')">
       <div class="gym-ex-name">
         ${escHtml(name)}
-        ${todayEntry ? '<span style="font-size:.7rem;color:#43a047">âœ… Vandaag gelogd</span>' : ''}
+        ${todayEntry ? '<span style="font-size:.7rem;color:#43a047">✅ Vandaag gelogd</span>' : ''}
         ${pr > 0 ? `<span style="font-size:.65rem;color:#ffd600;font-weight:700">PR: ${pr}kg</span>` : ''}
       </div>`;
 
     if(todayEntry){
       html += `<div style="font-size:.8rem;color:var(--dark)">
-        <strong>${todayEntry.gewicht}kg</strong> â€¢ ${todayEntry.sets}Ã—${todayEntry.reps}
-        ${todayEntry.stand ? `â€¢ ${escHtml(todayEntry.stand)}` : ''}
+        <strong>${todayEntry.gewicht}kg</strong> • ${todayEntry.sets}×${todayEntry.reps}
+        ${todayEntry.stand ? `• ${escHtml(todayEntry.stand)}` : ''}
       </div>`;
     }
 
     if(history.length > 0 && !todayEntry){
       html += `<div class="gym-history" style="font-size:.75rem;color:var(--text-light)">
-        Laatst: ${lastEntry.date.slice(5)} â€” ${lastEntry.gewicht}kg, ${lastEntry.sets}Ã—${lastEntry.reps}
+        Laatst: ${lastEntry.date.slice(5)} — ${lastEntry.gewicht}kg, ${lastEntry.sets}×${lastEntry.reps}
         ${lastEntry.stand ? `(${escHtml(lastEntry.stand)})` : ''}
       </div>`;
     }
@@ -1820,7 +1819,7 @@ function renderGymSection(){
   });
 
   html += `<div style="display:flex;gap:8px;margin-top:8px">
-    <button class="btn btn-secondary btn-block" onclick="openModal('modalAddGymExercise')">âž• Eigen oefening toevoegen</button>
+    <button class="btn btn-secondary btn-block" onclick="openModal('modalAddGymExercise')">➕ Eigen oefening toevoegen</button>
   </div>`;
 
   html += `</div>`;
@@ -1829,7 +1828,7 @@ function renderGymSection(){
 
 function renderStretchRoutine(){
   let html = `<div class="card" style="border-left:4px solid #43a047;margin-top:8px">
-    <h3>ðŸ§˜ Actief Herstel â€” Stretch & Yoga Routine</h3>
+    <h3>🧘 Actief Herstel — Stretch & Yoga Routine</h3>
     <div style="font-size:.8rem;color:var(--text-light);margin-bottom:8px">Aanbevolen op rustdagen voor herstel en flexibiliteit</div>`;
 
   STRETCH_ROUTINE.forEach(s => {
@@ -1841,7 +1840,7 @@ function renderStretchRoutine(){
   });
 
   html += `<div style="margin-top:12px;padding:10px;background:#e8f5e9;border-radius:var(--radius);font-size:.8rem">
-    ðŸ’¡ <strong>Tip:</strong> Doe deze routine op rustdagen als actief herstel. Stretchen verbetert je flexibiliteit, vermindert spierpijn en helpt bij herstel na zware trainingen.
+    💡 <strong>Tip:</strong> Doe deze routine op rustdagen als actief herstel. Stretchen verbetert je flexibiliteit, vermindert spierpijn en helpt bij herstel na zware trainingen.
   </div>`;
   html += `</div>`;
   return html;
@@ -1853,11 +1852,11 @@ let timerSeconds = 0;
 let timerRunning = false;
 
 function openTimerForEx(name, duration){
-  document.getElementById('timerExName').textContent = name + ' â€” ' + duration;
+  document.getElementById('timerExName').textContent = name + ' — ' + duration;
   timerSeconds = 0;
   timerRunning = false;
   updateTimerDisplay();
-  document.getElementById('timerStartBtn').textContent = 'â–¶ï¸ Start';
+  document.getElementById('timerStartBtn').textContent = '▶️ Start';
   openModal('modalTimer');
 }
 
@@ -1865,10 +1864,10 @@ function toggleTimer(){
   if(timerRunning){
     clearInterval(timerInterval);
     timerRunning = false;
-    document.getElementById('timerStartBtn').textContent = 'â–¶ï¸ Start';
+    document.getElementById('timerStartBtn').textContent = '▶️ Start';
   } else {
     timerRunning = true;
-    document.getElementById('timerStartBtn').textContent = 'â¸ï¸ Pauze';
+    document.getElementById('timerStartBtn').textContent = '⏸️ Pauze';
     timerInterval = setInterval(() => {
       timerSeconds++;
       updateTimerDisplay();
@@ -1881,7 +1880,7 @@ function resetTimer(){
   timerSeconds = 0;
   timerRunning = false;
   updateTimerDisplay();
-  document.getElementById('timerStartBtn').textContent = 'â–¶ï¸ Start';
+  document.getElementById('timerStartBtn').textContent = '▶️ Start';
 }
 
 function stopTimer(){
@@ -1920,7 +1919,7 @@ function renderActiviteit(){
   let html = '';
 
   html += `<div class="card">
-    <h3>ðŸ‘£ Stappen vandaag</h3>
+    <h3>👣 Stappen vandaag</h3>
     <div style="display:flex;justify-content:space-between;align-items:baseline;margin:8px 0">
       <span style="font-size:1.5rem;font-weight:800;color:#1e88e5">${stepsToday.toLocaleString()}</span>
       <span style="font-size:.85rem;color:var(--text-light)">/ ${stepsDoel.toLocaleString()}</span>
@@ -1930,13 +1929,13 @@ function renderActiviteit(){
     </div>
     <div style="display:flex;gap:8px;margin-top:12px">
       <input type="number" id="stepsInput" placeholder="Stappen invoeren" value="${stepsToday || ''}" style="flex:1">
-      <button class="btn btn-primary" onclick="saveSteps()">ðŸ’¾</button>
+      <button class="btn btn-primary" onclick="saveSteps()">💾</button>
     </div>
   </div>`;
 
   html += `<div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-      <h3 style="margin:0">ðŸƒ Activiteiten vandaag</h3>
+      <h3 style="margin:0">🏃 Activiteiten vandaag</h3>
       <span style="font-weight:700;color:var(--accent)">${todayActKcal} kcal</span>
     </div>`;
 
@@ -1950,31 +1949,31 @@ function renderActiviteit(){
           <div class="ai-meta">${a.duur} min</div>
         </div>
         <div class="ai-kcal">${a.kcal} kcal</div>
-        <button class="btn btn-danger btn-small" style="padding:4px 8px;min-height:28px" onclick="removeActivity(${i})">âœ•</button>
+        <button class="btn btn-danger btn-small" style="padding:4px 8px;min-height:28px" onclick="removeActivity(${i})">✕</button>
       </div>`;
     });
   } else {
-    html += `<div class="empty-state"><div class="empty-icon">ðŸƒ</div><p>Nog geen activiteiten vandaag</p></div>`;
+    html += `<div class="empty-state"><div class="empty-icon">🏃</div><p>Nog geen activiteiten vandaag</p></div>`;
   }
 
-  html += `<button class="btn btn-primary btn-block" onclick="openAddActivity()" style="margin-top:8px">âž• Activiteit toevoegen</button>`;
+  html += `<button class="btn btn-primary btn-block" onclick="openAddActivity()" style="margin-top:8px">➕ Activiteit toevoegen</button>`;
   html += `</div>`;
 
   html += `<div class="card">
-    <h3>ðŸ“Š Weekoverzicht</h3>
+    <h3>📊 Weekoverzicht</h3>
     <div class="stat-grid" style="margin-top:8px">
       <div class="stat-box">
-        <div class="stat-icon">ðŸ‘£</div>
+        <div class="stat-icon">👣</div>
         <div class="stat-value" style="font-size:1.1rem">${weekSteps.toLocaleString()}</div>
         <div class="stat-label">Stappen deze week</div>
       </div>
       <div class="stat-box">
-        <div class="stat-icon">ðŸƒ</div>
+        <div class="stat-icon">🏃</div>
         <div class="stat-value" style="font-size:1.1rem">${weekActs}</div>
         <div class="stat-label">Activiteiten</div>
       </div>
       <div class="stat-box" style="grid-column:span 2">
-        <div class="stat-icon">ðŸ”¥</div>
+        <div class="stat-icon">🔥</div>
         <div class="stat-value" style="font-size:1.1rem">${weekBurn.toLocaleString()}</div>
         <div class="stat-label">kcal verbrand (activiteiten)</div>
       </div>
@@ -2000,11 +1999,11 @@ function openAddActivity(){
     </select>
     <label>Duur (minuten)</label>
     <input type="number" id="actDuur" value="30" min="1">
-    <label>CalorieÃ«n (auto-berekend)</label>
+    <label>Calorieën (auto-berekend)</label>
     <input type="number" id="actKcal" placeholder="Wordt berekend">
     <div style="font-size:.75rem;color:var(--text-light);margin-top:4px">Laat leeg voor automatische berekening</div>
     <div style="margin-top:16px">
-      <button class="btn btn-primary btn-block" onclick="saveActivity()">ðŸ’¾ Toevoegen</button>
+      <button class="btn btn-primary btn-block" onclick="saveActivity()">💾 Toevoegen</button>
     </div>
   `;
   const calcAct = () => {
@@ -2054,7 +2053,7 @@ function renderProfiel(){
   let html = '';
 
   html += `<div class="card">
-    <h3>ðŸ‘¤ Persoonlijke gegevens</h3>
+    <h3>👤 Persoonlijke gegevens</h3>
     <label>Naam</label>
     <input type="text" id="profNaam" value="${escHtml(profile.naam)}" onchange="updateProfile()">
     <label>Gewicht (kg)</label>
@@ -2079,7 +2078,7 @@ function renderProfiel(){
   </div>`;
 
   html += `<div class="card">
-    <h3>ðŸ”¢ Berekeningen</h3>
+    <h3>🔢 Berekeningen</h3>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px">
       <div style="text-align:center;padding:12px;background:#f5f5f5;border-radius:var(--radius)">
         <div style="font-size:.7rem;color:var(--text-light)">BMR</div>
@@ -2100,7 +2099,7 @@ function renderProfiel(){
   </div>`;
 
   html += `<div class="card">
-    <h3>ðŸŽ¯ Doelen</h3>
+    <h3>🎯 Doelen</h3>
     <label>Calorie deficit/surplus (kcal)</label>
     <input type="number" id="profDeficit" value="${profile.deficit}" onchange="updateProfile()">
     <div style="font-size:.75rem;color:var(--text-light);margin-top:2px">Negatief = afvallen, Positief = aankomen. Standaard: -500</div>
@@ -2115,18 +2114,18 @@ function renderProfiel(){
   // Perimenopauze tips
   if(isPerimenopauze()) {
     html += `<div class="card" style="border-left:4px solid #7b1fa2">
-      <h3>ðŸŒ¸ Perimenopauze Tips</h3>
+      <h3>🌸 Perimenopauze Tips</h3>
       <div class="peri-tips">
         <ul style="list-style:none;padding:0;margin:0">
-          <li>ðŸ’ª Krachttraining is extra belangrijk voor spierbehoud</li>
-          <li>ðŸ˜´ Slaap 7-8 uur per nacht â€” cruciaal voor hormoonbalans</li>
-          <li>ðŸ§˜ Stress verlaagt oestrogeen â†’ meer buikvet. Yoga/meditatie helpt</li>
-          <li>ðŸ¥© Eiwit verspreid over de dag (elke maaltijd 20-30g)</li>
-          <li>ðŸ‹ï¸ Weerstandstraining 3x/week minimum</li>
+          <li>💪 Krachttraining is extra belangrijk voor spierbehoud</li>
+          <li>😴 Slaap 7-8 uur per nacht — cruciaal voor hormoonbalans</li>
+          <li>🧘 Stress verlaagt oestrogeen → meer buikvet. Yoga/meditatie helpt</li>
+          <li>🥩 Eiwit verspreid over de dag (elke maaltijd 20-30g)</li>
+          <li>🏋️ Weerstandstraining 3x/week minimum</li>
         </ul>
       </div>
       <div style="margin-top:8px;font-size:.75rem;color:var(--text-light)">
-        â„¹ï¸ BMR is aangepast (-5%), deficit is milder (-300 kcal), eiwit is hoger (35%).
+        ℹ️ BMR is aangepast (-5%), deficit is milder (-300 kcal), eiwit is hoger (35%).
         Workout schema bevat meer krachttraining en minder HIIT voor minder cortisol-stress.
       </div>
     </div>`;
@@ -2134,7 +2133,7 @@ function renderProfiel(){
 
   // Blessures sectie
   html += `<div class="card">
-    <h3>ðŸ©¹ Blessures</h3>
+    <h3>🩹 Blessures</h3>
     <div style="font-size:.8rem;color:var(--text-light);margin-bottom:8px">Selecteer actieve blessures. Het workout schema wordt automatisch aangepast.</div>
     <div class="injury-section">
       <div class="injury-item">
@@ -2205,21 +2204,21 @@ function renderProfiel(){
   </div>`;
 
   html += `<div class="card">
-    <h3>âš–ï¸ Gewicht loggen</h3>
+    <h3>⚖️ Gewicht loggen</h3>
     <div style="display:flex;gap:8px;margin-top:8px">
       <input type="number" id="weightInput" placeholder="Gewicht (kg)" step="0.1" value="${weightLog[today()] || ''}" style="flex:1">
-      <button class="btn btn-primary" onclick="logWeight()">ðŸ’¾</button>
+      <button class="btn btn-primary" onclick="logWeight()">💾</button>
     </div>
-    ${weightLog[today()] ? `<div style="font-size:.8rem;color:var(--green);margin-top:4px">âœ… Vandaag gelogd: ${weightLog[today()]} kg</div>` : ''}
+    ${weightLog[today()] ? `<div style="font-size:.8rem;color:var(--green);margin-top:4px">✅ Vandaag gelogd: ${weightLog[today()]} kg</div>` : ''}
   </div>`;
 
   html += `<div class="card">
-    <h3>ðŸ’¾ Backup & Reset</h3>
+    <h3>💾 Backup & Reset</h3>
     <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
-      <button class="btn btn-primary btn-block" onclick="exportData()">ðŸ“¤ Export data (JSON)</button>
-      <button class="btn btn-secondary btn-block" onclick="document.getElementById('importFile').click()">ðŸ“¥ Import data (JSON)</button>
+      <button class="btn btn-primary btn-block" onclick="exportData()">📤 Export data (JSON)</button>
+      <button class="btn btn-secondary btn-block" onclick="document.getElementById('importFile').click()">📥 Import data (JSON)</button>
       <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
-      <button class="btn btn-danger btn-block" onclick="resetAllData()">ðŸ—‘ï¸ Alle data wissen</button>
+      <button class="btn btn-danger btn-block" onclick="resetAllData()">🗑️ Alle data wissen</button>
     </div>
   </div>`;
 
@@ -2237,7 +2236,7 @@ function updateProfile(){
   // When switching to perimenopauze, suggest milder deficit
   if(profile.geslacht === 'vrouw_peri' && prevGeslacht !== 'vrouw_peri') {
     profile.deficit = -300;
-    toast('ðŸŒ¸ Perimenopauze modus geactiveerd: deficit aangepast naar -300 kcal');
+    toast('🌸 Perimenopauze modus geactiveerd: deficit aangepast naar -300 kcal');
   }
   profile.deficit = parseInt(document.getElementById('profDeficit').value) || (profile.geslacht === 'vrouw_peri' ? -300 : -500);
   profile.stappenDoel = parseInt(document.getElementById('profStappen').value) || 10000;
@@ -2271,7 +2270,7 @@ function exportData(){
   a.download = 'vetverbranding-backup-' + today() + '.json';
   a.href = URL.createObjectURL(blob);
   a.click();
-  toast('Data geÃ«xporteerd!');
+  toast('Data geëxporteerd!');
 }
 
 function importData(e){
@@ -2298,7 +2297,7 @@ function importData(e){
       if(data.habitList){habitList = data.habitList; sv('habitList', habitList);}
       if(data.habitLog){habitLog = data.habitLog; sv('habitLog', habitLog);}
       if(data.habitAchievements){habitAchievements = data.habitAchievements; sv('habitAchievements', habitAchievements);}
-      toast('Data geÃ¯mporteerd!');
+      toast('Data geïmporteerd!');
       renderDashboard();
     } catch(err){
       toast('Ongeldig bestand');
@@ -2384,9 +2383,9 @@ function isExerciseInjured(exerciseId){
 
 function getActiveInjurySummary(){
   const active = getActiveInjuries();
-  if(active.length === 0) return '<div style="font-size:.8rem;color:var(--green);margin-top:8px">âœ… Geen actieve blessures</div>';
+  if(active.length === 0) return '<div style="font-size:.8rem;color:var(--green);margin-top:8px">✅ Geen actieve blessures</div>';
   const names = {schouder:'Schouder',knie:'Knie',rug:'Rug',enkel:'Enkel',pols:'Pols',heup:'Heup',nek:'Nek',overig:'Overig'};
-  return `<div class="injury-warning" style="margin-top:8px">âš ï¸ Actieve blessures: ${active.map(a => names[a]).join(', ')} â€” workout schema is aangepast</div>`;
+  return `<div class="injury-warning" style="margin-top:8px">⚠️ Actieve blessures: ${active.map(a => names[a]).join(', ')} — workout schema is aangepast</div>`;
 }
 
 function isGymExerciseInjured(exerciseName){
@@ -2487,18 +2486,18 @@ function renderFysioSection(){
 
   // Streak
   html += `<div class="fysio-streak">
-    <div class="streak-num">ðŸ”¥ ${streak}</div>
+    <div class="streak-num">🔥 ${streak}</div>
     <div class="streak-label">dagen op rij fysio gedaan</div>
   </div>`;
 
   // Today's exercises
   html += `<div class="card" style="border-left:4px solid #00897b">
-    <h3>ðŸ“‹ Vandaag te doen (${doneCount}/${todayExercises.length})</h3>
+    <h3>📋 Vandaag te doen (${doneCount}/${todayExercises.length})</h3>
     <div class="progress-bar" style="height:8px;margin:8px 0"><div class="progress-fill green" style="width:${todayExercises.length>0?(doneCount/todayExercises.length)*100:0}%"></div></div>
-    ${allDone ? '<div style="text-align:center;font-size:1rem;color:#00897b;font-weight:700;margin:8px 0">âœ… Alles gedaan! Goed bezig!</div>' : ''}`;
+    ${allDone ? '<div style="text-align:center;font-size:1rem;color:#00897b;font-weight:700;margin:8px 0">✅ Alles gedaan! Goed bezig!</div>' : ''}`;
 
   if(todayExercises.length === 0){
-    html += `<div class="empty-state" style="padding:16px"><div class="empty-icon">ðŸ¥</div><p>Geen fysio oefeningen gepland voor vandaag</p></div>`;
+    html += `<div class="empty-state" style="padding:16px"><div class="empty-icon">🏥</div><p>Geen fysio oefeningen gepland voor vandaag</p></div>`;
   } else {
     todayExercises.forEach(ex => {
       const done = todayLog[ex.id] === true;
@@ -2508,10 +2507,10 @@ function renderFysioSection(){
           <div style="flex:1">
             <div style="font-weight:700;font-size:.9rem;${done?'text-decoration:line-through;':''}">${escHtml(ex.naam)}</div>
             <div style="font-size:.8rem;color:var(--text-light);margin-top:2px">
-              ${ex.sets}Ã—${ex.reps ? ex.reps + ' reps' : ex.tijd + ' sec'} â€¢ ${ex.frequentie}
+              ${ex.sets}×${ex.reps ? ex.reps + ' reps' : ex.tijd + ' sec'} • ${ex.frequentie}
             </div>
             ${ex.beschrijving ? `<div style="font-size:.75rem;color:#666;margin-top:4px">${escHtml(ex.beschrijving)}</div>` : ''}
-            ${ex.notities ? `<div style="font-size:.75rem;color:#00897b;margin-top:4px;font-style:italic">ðŸ“ ${escHtml(ex.notities)}</div>` : ''}
+            ${ex.notities ? `<div style="font-size:.75rem;color:#00897b;margin-top:4px;font-style:italic">📝 ${escHtml(ex.notities)}</div>` : ''}
           </div>
         </div>
       </div>`;
@@ -2521,7 +2520,7 @@ function renderFysioSection(){
 
   // All exercises (manage)
   html += `<div class="card">
-    <h3>ðŸ¥ Alle fysio oefeningen</h3>
+    <h3>🏥 Alle fysio oefeningen</h3>
     <div style="font-size:.8rem;color:var(--text-light);margin-bottom:8px">Beheer je fysio/revalidatie oefeningen</div>`;
 
   fysioExercises.forEach(ex => {
@@ -2529,23 +2528,23 @@ function renderFysioSection(){
       <div style="display:flex;justify-content:space-between;align-items:flex-start">
         <div style="flex:1">
           <div style="font-weight:700;font-size:.9rem">${escHtml(ex.naam)} ${!ex.actief?'<span style="font-size:.7rem;color:#999">(inactief)</span>':''}</div>
-          <div style="font-size:.8rem;color:var(--text-light)">${ex.sets}Ã—${ex.reps ? ex.reps + ' reps' : ex.tijd + ' sec'} â€¢ ${ex.frequentie}</div>
+          <div style="font-size:.8rem;color:var(--text-light)">${ex.sets}×${ex.reps ? ex.reps + ' reps' : ex.tijd + ' sec'} • ${ex.frequentie}</div>
           ${ex.beschrijving ? `<div style="font-size:.75rem;color:#666;margin-top:4px">${escHtml(ex.beschrijving)}</div>` : ''}
         </div>
         <div style="display:flex;gap:4px">
-          <button class="btn btn-small" style="padding:4px 8px;min-height:28px;font-size:.7rem;background:${ex.actief?'#fff3e0':'#e8f5e9'};color:${ex.actief?'#e65100':'#2e7d32'}" onclick="toggleFysioActive('${ex.id}')">${ex.actief?'â¸ï¸':'â–¶ï¸'}</button>
-          <button class="btn btn-danger btn-small" style="padding:4px 8px;min-height:28px;font-size:.7rem" onclick="removeFysioExercise('${ex.id}')">âœ•</button>
+          <button class="btn btn-small" style="padding:4px 8px;min-height:28px;font-size:.7rem;background:${ex.actief?'#fff3e0':'#e8f5e9'};color:${ex.actief?'#e65100':'#2e7d32'}" onclick="toggleFysioActive('${ex.id}')">${ex.actief?'⏸️':'▶️'}</button>
+          <button class="btn btn-danger btn-small" style="padding:4px 8px;min-height:28px;font-size:.7rem" onclick="removeFysioExercise('${ex.id}')">✕</button>
         </div>
       </div>
     </div>`;
   });
 
-  html += `<button class="btn btn-primary btn-block" onclick="openAddFysio()" style="margin-top:8px">âž• Fysio oefening toevoegen</button>`;
+  html += `<button class="btn btn-primary btn-block" onclick="openAddFysio()" style="margin-top:8px">➕ Fysio oefening toevoegen</button>`;
   html += `</div>`;
 
   // Calendar view (last 28 days)
   html += `<div class="card">
-    <h3>ðŸ“… Fysio kalender</h3>
+    <h3>📅 Fysio kalender</h3>
     <div class="fysio-calendar">
       <div class="fysio-cal-header">Ma</div><div class="fysio-cal-header">Di</div><div class="fysio-cal-header">Wo</div>
       <div class="fysio-cal-header">Do</div><div class="fysio-cal-header">Vr</div><div class="fysio-cal-header">Za</div><div class="fysio-cal-header">Zo</div>`;
@@ -2596,14 +2595,14 @@ function openAddFysio(){
     <label>Notities van fysio</label>
     <textarea id="fysioNotities" style="min-height:40px" placeholder="Optioneel"></textarea>
     <div style="margin-top:16px">
-      <button class="btn btn-primary btn-block" onclick="addFysioExercise()">ðŸ’¾ Opslaan</button>
+      <button class="btn btn-primary btn-block" onclick="addFysioExercise()">💾 Opslaan</button>
     </div>
   `;
   openModal('modalFysio');
 }
 
 // ===== HABIT TRACKER FUNCTIONS =====
-let newHabitEmoji = 'ðŸ’ª';
+let newHabitEmoji = '💪';
 
 function selectHabitEmoji(el, emoji){
   document.querySelectorAll('#habitEmojiPicker .chip').forEach(c => c.classList.remove('active'));
@@ -2773,27 +2772,27 @@ function checkHabitAchievements(){
   // Perfect day
   if(score.pct === 100 && !habitAchievements.includes('perfect_day_' + today())){
     habitAchievements.push('perfect_day_' + today());
-    newAchievements.push({emoji:'ðŸ†',title:'Perfect Day!',desc:'Je hebt 100% van je habits gedaan vandaag!'});
+    newAchievements.push({emoji:'🏆',title:'Perfect Day!',desc:'Je hebt 100% van je habits gedaan vandaag!'});
   }
   // 3 day streak
   if(allStreak >= 3 && !habitAchievements.includes('streak_3')){
     habitAchievements.push('streak_3');
-    newAchievements.push({emoji:'ðŸ”¥',title:'3 dagen streak!',desc:'3 dagen op rij alles gedaan!'});
+    newAchievements.push({emoji:'🔥',title:'3 dagen streak!',desc:'3 dagen op rij alles gedaan!'});
   }
   // Week warrior
   if(allStreak >= 7 && !habitAchievements.includes('streak_7')){
     habitAchievements.push('streak_7');
-    newAchievements.push({emoji:'â­',title:'Week Warrior!',desc:'Een hele week 80%+ gescoord!'});
+    newAchievements.push({emoji:'⭐',title:'Week Warrior!',desc:'Een hele week 80%+ gescoord!'});
   }
   // 14 day streak
   if(allStreak >= 14 && !habitAchievements.includes('streak_14')){
     habitAchievements.push('streak_14');
-    newAchievements.push({emoji:'ðŸ’Ž',title:'14 dagen streak!',desc:'2 weken lang consistent!'});
+    newAchievements.push({emoji:'💎',title:'14 dagen streak!',desc:'2 weken lang consistent!'});
   }
   // 28 day champion
   if(allStreak >= 28 && !habitAchievements.includes('streak_28')){
     habitAchievements.push('streak_28');
-    newAchievements.push({emoji:'ðŸ‘‘',title:'28 dagen Champion!',desc:'Het volledige programma volgehouden!'});
+    newAchievements.push({emoji:'👑',title:'28 dagen Champion!',desc:'Het volledige programma volgehouden!'});
   }
 
   sv('habitAchievements', habitAchievements);
@@ -2828,19 +2827,19 @@ function renderHabits(){
 
   // Daily score
   html += `<div class="card" style="text-align:center">
-    <h3>ðŸ“Š Vandaag: ${score.done}/${score.total} habits gedaan</h3>
+    <h3>📊 Vandaag: ${score.done}/${score.total} habits gedaan</h3>
     <div style="font-size:2rem;font-weight:800;color:${scoreColor};margin:8px 0">${score.pct}%</div>
     <div class="habit-score-bar">
       <div class="habit-score-fill" style="width:${score.pct}%;background:${scoreColor}"></div>
       <div class="habit-score-text">${score.done}/${score.total}</div>
     </div>
-    ${allStreak > 0 ? `<div style="font-size:.9rem;color:var(--accent);font-weight:700;margin-top:4px">ðŸ”¥ ${allStreak} dagen streak (80%+)</div>` : ''}
+    ${allStreak > 0 ? `<div style="font-size:.9rem;color:var(--accent);font-weight:700;margin-top:4px">🔥 ${allStreak} dagen streak (80%+)</div>` : ''}
   </div>`;
 
   // Today's habits
-  html += `<div class="card"><h3>âœ… Dagelijkse gewoontes</h3>`;
+  html += `<div class="card"><h3>✅ Dagelijkse gewoontes</h3>`;
   if(todayHabits.length === 0){
-    html += `<div class="empty-state"><div class="empty-icon">âœ…</div><p>Geen habits gepland voor vandaag</p></div>`;
+    html += `<div class="empty-state"><div class="empty-icon">✅</div><p>Geen habits gepland voor vandaag</p></div>`;
   } else {
     todayHabits.forEach(h => {
       const done = log[h.id] === true;
@@ -2855,19 +2854,19 @@ function renderHabits(){
             <div class="habit-freq">${freqLabels[h.frequentie] || h.frequentie}</div>
           </div>
           <div style="text-align:right">
-            ${streak > 0 ? `<div class="habit-streak">ðŸ”¥ ${streak} dagen</div>` : '<div class="habit-streak" style="color:#bbb">0 dagen</div>'}
+            ${streak > 0 ? `<div class="habit-streak">🔥 ${streak} dagen</div>` : '<div class="habit-streak" style="color:#bbb">0 dagen</div>'}
             <div class="habit-best">Best: ${best}</div>
           </div>
         </div>
       </div>`;
     });
   }
-  html += `<button class="btn btn-secondary btn-block" onclick="openModal('modalAddHabit')" style="margin-top:8px">âž• Eigen habit toevoegen</button>`;
+  html += `<button class="btn btn-secondary btn-block" onclick="openModal('modalAddHabit')" style="margin-top:8px">➕ Eigen habit toevoegen</button>`;
   html += `</div>`;
 
   // Week overview grid
   html += `<div class="card">
-    <h3>ðŸ“… Weekoverzicht</h3>`;
+    <h3>📅 Weekoverzicht</h3>`;
   
   // Get Monday of current week
   const todayDate = new Date(today());
@@ -2902,13 +2901,13 @@ function renderHabits(){
       const done = dayLog[h.id] === true;
       
       if(isFuture){
-        html += `<div class="hw-cell future ${isToday?'today-cell':''}">â€”</div>`;
+        html += `<div class="hw-cell future ${isToday?'today-cell':''}">—</div>`;
       } else if(!applies){
-        html += `<div class="hw-cell future">â€”</div>`;
+        html += `<div class="hw-cell future">—</div>`;
       } else if(done){
-        html += `<div class="hw-cell done ${isToday?'today-cell':''}">âœ…</div>`;
+        html += `<div class="hw-cell done ${isToday?'today-cell':''}">✅</div>`;
       } else {
-        html += `<div class="hw-cell missed ${isToday?'today-cell':''}">âŒ</div>`;
+        html += `<div class="hw-cell missed ${isToday?'today-cell':''}">❌</div>`;
       }
     });
   });
@@ -2918,7 +2917,7 @@ function renderHabits(){
   weekDays.forEach(ds => {
     const isFuture = ds > today();
     if(isFuture){
-      html += `<div class="hw-total" style="color:#bbb">â€”</div>`;
+      html += `<div class="hw-total" style="color:#bbb">—</div>`;
     } else {
       const habits = getHabitsForDate(ds);
       const dayLog = habitLog[ds] || {};
@@ -2932,13 +2931,13 @@ function renderHabits(){
 
   // Achievements
   html += `<div class="card">
-    <h3>ðŸ† Achievements</h3>`;
+    <h3>🏆 Achievements</h3>`;
   const achieveList = [
-    {id:'perfect_day',emoji:'ðŸ†',title:'Perfect Day',desc:'100% score op een dag',check:() => habitAchievements.some(a => a.startsWith('perfect_day_'))},
-    {id:'streak_3',emoji:'ðŸ”¥',title:'3 Dagen Streak',desc:'3 dagen op rij 80%+',check:() => habitAchievements.includes('streak_3')},
-    {id:'streak_7',emoji:'â­',title:'Week Warrior',desc:'Een hele week 80%+',check:() => habitAchievements.includes('streak_7')},
-    {id:'streak_14',emoji:'ðŸ’Ž',title:'14 Dagen Streak',desc:'2 weken consistent',check:() => habitAchievements.includes('streak_14')},
-    {id:'streak_28',emoji:'ðŸ‘‘',title:'28 Dagen Champion',desc:'Het volledige programma!',check:() => habitAchievements.includes('streak_28')}
+    {id:'perfect_day',emoji:'🏆',title:'Perfect Day',desc:'100% score op een dag',check:() => habitAchievements.some(a => a.startsWith('perfect_day_'))},
+    {id:'streak_3',emoji:'🔥',title:'3 Dagen Streak',desc:'3 dagen op rij 80%+',check:() => habitAchievements.includes('streak_3')},
+    {id:'streak_7',emoji:'⭐',title:'Week Warrior',desc:'Een hele week 80%+',check:() => habitAchievements.includes('streak_7')},
+    {id:'streak_14',emoji:'💎',title:'14 Dagen Streak',desc:'2 weken consistent',check:() => habitAchievements.includes('streak_14')},
+    {id:'streak_28',emoji:'👑',title:'28 Dagen Champion',desc:'Het volledige programma!',check:() => habitAchievements.includes('streak_28')}
   ];
   achieveList.forEach(a => {
     const unlocked = a.check();
@@ -2948,14 +2947,14 @@ function renderHabits(){
         <div style="font-weight:700;font-size:.85rem">${a.title}</div>
         <div style="font-size:.75rem;color:var(--text-light)">${a.desc}</div>
       </div>
-      ${unlocked ? '<span style="color:#43a047;font-weight:700">âœ…</span>' : '<span style="color:#bbb">ðŸ”’</span>'}
+      ${unlocked ? '<span style="color:#43a047;font-weight:700">✅</span>' : '<span style="color:#bbb">🔒</span>'}
     </div>`;
   });
   html += `</div>`;
 
   // Manage habits
   html += `<div class="card">
-    <h3>âš™ï¸ Habits beheren</h3>
+    <h3>⚙️ Habits beheren</h3>
     <div style="font-size:.8rem;color:var(--text-light);margin-bottom:8px">Verwijder habits die je niet meer nodig hebt</div>`;
   habitList.forEach(h => {
     const isDefault = h.id.startsWith('h_') && DEFAULT_HABITS.some(d => d.id === h.id);
@@ -2963,7 +2962,7 @@ function renderHabits(){
       <span style="font-size:1.1rem">${h.emoji}</span>
       <span style="flex:1;font-size:.85rem;font-weight:600">${escHtml(h.naam)}</span>
       <span style="font-size:.7rem;color:var(--text-light)">${h.frequentie}</span>
-      <button class="btn btn-danger btn-small" style="padding:4px 8px;min-height:28px;font-size:.7rem" onclick="removeHabit('${h.id}')">âœ•</button>
+      <button class="btn btn-danger btn-small" style="padding:4px 8px;min-height:28px;font-size:.7rem" onclick="removeHabit('${h.id}')">✕</button>
     </div>`;
   });
   html += `</div>`;
@@ -2999,4 +2998,3 @@ if(!gymExercises.includes('Crosstrainer / Elliptical')){
 
 // ===== INIT =====
 renderDashboard();
-
