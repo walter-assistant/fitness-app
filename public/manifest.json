@@ -1,0 +1,22 @@
+{
+  "name": "4 Weken Vetverbranding",
+  "short_name": "Vetverbranding",
+  "description": "Jouw persoonlijke fitness coach - 4 weken vetverbrandingsprogramma",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#FF6B35",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
