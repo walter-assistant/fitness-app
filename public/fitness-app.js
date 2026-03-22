@@ -542,6 +542,37 @@ function toast(msg){const t=document.createElement('div');t.className='toast';t.
 function openModal(id){document.getElementById(id).classList.add('open')}
 function closeModal(id){document.getElementById(id).classList.remove('open')}
 function today(){return new Date().toISOString().split('T')[0]}
+let selectedDate = today();
+
+function setSelectedDate(dateStr){
+  if(dateStr > today()) dateStr = today();
+  selectedDate = dateStr;
+  const activeTab = document.querySelector('.tab-btn.active');
+  if(activeTab) renderTab(activeTab.dataset.tab);
+}
+
+function changeSelectedDate(offset){
+  const d = new Date(selectedDate);
+  d.setDate(d.getDate() + offset);
+  setSelectedDate(d.toISOString().split('T')[0]);
+}
+
+function renderDateNav(){
+  const isToday = selectedDate === today();
+  const d = new Date(selectedDate + 'T12:00:00');
+  const dagNamen = ['zo','ma','di','wo','do','vr','za'];
+  const maandNamen = ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
+  const label = `${dagNamen[d.getDay()]} ${d.getDate()} ${maandNamen[d.getMonth()]}`;
+  return `<div class="date-nav">
+    <button class="dn-btn" onclick="changeSelectedDate(-1)">◀</button>
+    <div class="dn-date ${isToday ? '' : 'dn-past'}">
+      ${label}${isToday ? '<span class="dn-today">vandaag</span>' : ''}
+      <input type="date" value="${selectedDate}" max="${today()}" onchange="setSelectedDate(this.value)">
+    </div>
+    <button class="dn-btn" onclick="changeSelectedDate(1)" ${isToday ? 'disabled' : ''}>▶</button>
+    ${!isToday ? '<button class="dn-btn" onclick="setSelectedDate(today())" title="Naar vandaag" style="font-size:.8rem;font-weight:700;background:#fff3e0;color:var(--accent)">NU</button>' : ''}
+  </div>`;
+}
 
 function getDayNumber(){
   const start = new Date(profile.startDatum);
@@ -605,14 +636,14 @@ function getMacroTargets(){
 }
 
 // ===== DAILY DATA =====
-function getTodayMeals(){
-  const d = today();
-  if(!meals[d]) meals[d] = {ontbijt:[],lunch:[],diner:[],snacks:[]};
-  return meals[d];
+function getMealsForDate(dateStr){
+  if(!meals[dateStr]) meals[dateStr] = {ontbijt:[],lunch:[],diner:[],snacks:[]};
+  return meals[dateStr];
 }
+function getTodayMeals(){ return getMealsForDate(selectedDate); }
 
-function getTodayTotals(){
-  const m = getTodayMeals();
+function getTotalsForDate(dateStr){
+  const m = getMealsForDate(dateStr);
   let kcal=0,eiwit=0,koolhydraten=0,vet=0;
   Object.values(m).forEach(arr => arr.forEach(item => {
     kcal += item.kcal||0;
@@ -622,24 +653,29 @@ function getTodayTotals(){
   }));
   return {kcal,eiwit,koolhydraten,vet};
 }
+function getTodayTotals(){ return getTotalsForDate(selectedDate); }
 
-function getTodaySteps(){ return steps[today()] || 0; }
-function getTodayWater(){ return water[today()] || 0; }
+function getStepsForDate(dateStr){ return steps[dateStr] || 0; }
+function getTodaySteps(){ return getStepsForDate(selectedDate); }
+function getWaterForDate(dateStr){ return water[dateStr] || 0; }
+function getTodayWater(){ return getWaterForDate(selectedDate); }
 
-function getTodayExtraBurn(){
-  const s = getTodaySteps();
+function getExtraBurnForDate(dateStr){
+  const s = getStepsForDate(dateStr);
   const stepBurn = Math.round(s * 0.04);
-  const acts = activities[today()] || [];
+  const acts = activities[dateStr] || [];
   const actBurn = acts.reduce((sum, a) => sum + (a.kcal||0), 0);
-  const wo = workoutsDone[today()];
-  const woBurn = wo && wo.done ? Math.round((wo.minutes||25) * 8) : 0; // ~8 kcal/min compound+HIIT
+  const wo = workoutsDone[dateStr];
+  const woBurn = wo && wo.done ? Math.round((wo.minutes||25) * 8) : 0;
   return {stepBurn, actBurn, woBurn, total: stepBurn + actBurn + woBurn};
 }
+function getTodayExtraBurn(){ return getExtraBurnForDate(selectedDate); }
 
-function getTodayWorkoutMinutes(){
-  const wo = workoutsDone[today()];
+function getWorkoutMinutesForDate(dateStr){
+  const wo = workoutsDone[dateStr];
   return wo && wo.done ? (wo.minutes||25) : 0;
 }
+function getTodayWorkoutMinutes(){ return getWorkoutMinutesForDate(selectedDate); }
 
 // ===== IF (INTERMITTENT FASTING) FUNCTIONS =====
 function getIFStatus(){
@@ -722,7 +758,7 @@ function toggleVasten(){
 }
 
 function logIFDag(gehaald){
-  ifState.log[today()] = gehaald;
+  ifState.log[selectedDate] = gehaald;
   sv('ifState', ifState);
   renderVoeding();
   toast(gehaald ? 'IF schema gehaald! 🎉' : 'Niet gehaald, morgen beter! 💪');
@@ -804,7 +840,7 @@ function renderDashboard(){
   // Update header
   document.getElementById('headerSubtitle').textContent = `Dag ${dayNumber} van 28 • Week ${week}`;
 
-  let html = '';
+  let html = renderDateNav();
 
   // Perimenopauze banner
   if(isPerimenopauze()) {
@@ -1020,7 +1056,7 @@ function renderVoeding(){
   const todayMeals = getTodayMeals();
   const ifStatus = getIFStatus();
 
-  let html = '';
+  let html = renderDateNav();
 
   // === IF TRACKER ===
   html += `<div class="card" style="border-left:4px solid ${ifStatus.isEetvenster ? '#43a047' : '#e53935'}">
@@ -1136,9 +1172,9 @@ function renderVoeding(){
 
     <!-- Dagelijks loggen -->
     <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
-      <span style="font-size:.8rem;flex:1">IF gehaald vandaag?</span>
-      <button class="btn btn-green btn-small ${ifState.log[today()] === true ? '' : 'btn-secondary'}" onclick="logIFDag(true)" style="padding:6px 14px;min-height:32px">✅ Ja</button>
-      <button class="btn btn-danger btn-small ${ifState.log[today()] === false ? '' : 'btn-secondary'}" onclick="logIFDag(false)" style="padding:6px 14px;min-height:32px">❌ Nee</button>
+      <span style="font-size:.8rem;flex:1">IF gehaald${selectedDate !== today() ? ' ('+selectedDate.slice(5)+')' : ''}?</span>
+      <button class="btn btn-green btn-small ${ifState.log[selectedDate] === true ? '' : 'btn-secondary'}" onclick="logIFDag(true)" style="padding:6px 14px;min-height:32px">✅ Ja</button>
+      <button class="btn btn-danger btn-small ${ifState.log[selectedDate] === false ? '' : 'btn-secondary'}" onclick="logIFDag(false)" style="padding:6px 14px;min-height:32px">❌ Nee</button>
     </div>
 
     ${ifStatus.streak > 0 ? `<div style="text-align:center;margin-top:8px;font-size:.9rem;font-weight:700;color:var(--accent)">🔥 ${ifStatus.streak} dagen op rij gevast!</div>` : ''}
@@ -1284,7 +1320,7 @@ function openAddMeal(type){
 function saveMeal(type){
   const naam = document.getElementById('mealName').value.trim();
   if(!naam){toast('Vul een naam in');return}
-  const m = getTodayMeals();
+  const m = getMealsForDate(selectedDate);
   m[type].push({
     naam,
     kcal: parseInt(document.getElementById('mealKcal').value)||0,
@@ -1292,7 +1328,7 @@ function saveMeal(type){
     koolhydraten: parseInt(document.getElementById('mealKh').value)||0,
     vet: parseInt(document.getElementById('mealVet').value)||0
   });
-  meals[today()] = m;
+  meals[selectedDate] = m;
   sv('meals', meals);
   closeModal('modalMeal');
   renderVoeding();
@@ -1300,9 +1336,9 @@ function saveMeal(type){
 }
 
 function removeMeal(type, idx){
-  const m = getTodayMeals();
+  const m = getMealsForDate(selectedDate);
   m[type].splice(idx, 1);
-  meals[today()] = m;
+  meals[selectedDate] = m;
   sv('meals', meals);
   renderVoeding();
   toast('Verwijderd');
@@ -1310,9 +1346,9 @@ function removeMeal(type, idx){
 
 function quickAddMeal(type, sugIdx){
   const s = MEAL_SUGGESTIONS[type][sugIdx];
-  const m = getTodayMeals();
+  const m = getMealsForDate(selectedDate);
   m[type].push({...s});
-  meals[today()] = m;
+  meals[selectedDate] = m;
   sv('meals', meals);
   renderVoeding();
   toast(`${s.naam} toegevoegd!`);
@@ -1333,9 +1369,9 @@ function openSuggestions(type){
 
 function addSuggestion(type, idx){
   const s = MEAL_SUGGESTIONS[type][idx];
-  const m = getTodayMeals();
+  const m = getMealsForDate(selectedDate);
   m[type].push({...s});
-  meals[today()] = m;
+  meals[selectedDate] = m;
   sv('meals', meals);
   closeModal('modalSuggestions');
   renderVoeding();
@@ -1343,8 +1379,8 @@ function addSuggestion(type, idx){
 }
 
 function setWater(count){
-  const current = getTodayWater();
-  water[today()] = count === current ? count - 1 : count;
+  const current = getWaterForDate(selectedDate);
+  water[selectedDate] = count === current ? count - 1 : count;
   sv('water', water);
   renderVoeding();
 }
@@ -1650,7 +1686,7 @@ function getGymPR(exerciseName){
 function openGymLog(exerciseName){
   const history = getGymHistory(exerciseName);
   const pr = getGymPR(exerciseName);
-  const todayEntry = gymLog[today()] && gymLog[today()][exerciseName] ? gymLog[today()][exerciseName] : null;
+  const todayEntry = gymLog[selectedDate] && gymLog[selectedDate][exerciseName] ? gymLog[selectedDate][exerciseName] : null;
 
   document.getElementById('modalGymLogTitle').textContent = '🏋️ ' + exerciseName;
 
@@ -1732,8 +1768,8 @@ function saveGymLog(exerciseName){
 
   if(!gewicht){toast('Vul gewicht in');return}
 
-  if(!gymLog[today()]) gymLog[today()] = {};
-  gymLog[today()][exerciseName] = {gewicht, sets, reps, stand, notities};
+  if(!gymLog[selectedDate]) gymLog[selectedDate] = {};
+  gymLog[selectedDate][exerciseName] = {gewicht, sets, reps, stand, notities};
   sv('gymLog', gymLog);
   closeModal('modalGymLog');
   renderWorkouts();
@@ -1769,7 +1805,7 @@ function removeGymExercise(idx){
 }
 
 function renderGymSection(){
-  const todayLog = gymLog[today()] || {};
+  const todayLog = gymLog[selectedDate] || {};
   let html = '';
 
   html += `<div class="card" style="border-left:4px solid #7b1fa2">
@@ -1897,13 +1933,15 @@ function updateTimerDisplay(){
 
 // ===== ACTIVITEIT =====
 function renderActiviteit(){
-  const stepsToday = getTodaySteps();
+  const stepsDate = getStepsForDate(selectedDate);
   const stepsDoel = profile.stappenDoel || 10000;
-  const stepsPct = Math.min(100, (stepsToday / stepsDoel) * 100);
-  const todayActs = activities[today()] || [];
-  const todayActKcal = todayActs.reduce((s, a) => s + (a.kcal||0), 0);
+  const stepsPct = Math.min(100, (stepsDate / stepsDoel) * 100);
+  const dateActs = activities[selectedDate] || [];
+  const dateActKcal = dateActs.reduce((s, a) => s + (a.kcal||0), 0);
+  const isToday = selectedDate === today();
+  const dagLabel = isToday ? 'vandaag' : selectedDate.slice(5);
 
-  const startOfWeek = new Date(today());
+  const startOfWeek = new Date(selectedDate);
   startOfWeek.setDate(startOfWeek.getDate() - startOfWeek.getDay() + 1);
   let weekSteps = 0, weekActs = 0, weekBurn = 0;
   for(let i = 0; i < 7; i++){
@@ -1916,31 +1954,31 @@ function renderActiviteit(){
     weekBurn += dayActs.reduce((s, a) => s + (a.kcal||0), 0);
   }
 
-  let html = '';
+  let html = renderDateNav();
 
   html += `<div class="card">
-    <h3>👣 Stappen vandaag</h3>
+    <h3>👣 Stappen ${dagLabel}</h3>
     <div style="display:flex;justify-content:space-between;align-items:baseline;margin:8px 0">
-      <span style="font-size:1.5rem;font-weight:800;color:#1e88e5">${stepsToday.toLocaleString()}</span>
+      <span style="font-size:1.5rem;font-weight:800;color:#1e88e5">${stepsDate.toLocaleString()}</span>
       <span style="font-size:.85rem;color:var(--text-light)">/ ${stepsDoel.toLocaleString()}</span>
     </div>
     <div class="progress-bar" style="height:14px">
       <div class="progress-fill blue" style="width:${stepsPct}%"></div>
     </div>
     <div style="display:flex;gap:8px;margin-top:12px">
-      <input type="number" id="stepsInput" placeholder="Stappen invoeren" value="${stepsToday || ''}" style="flex:1">
+      <input type="number" id="stepsInput" placeholder="Stappen invoeren" value="${stepsDate || ''}" style="flex:1">
       <button class="btn btn-primary" onclick="saveSteps()">💾</button>
     </div>
   </div>`;
 
   html += `<div class="card">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-      <h3 style="margin:0">🏃 Activiteiten vandaag</h3>
-      <span style="font-weight:700;color:var(--accent)">${todayActKcal} kcal</span>
+      <h3 style="margin:0">🏃 Activiteiten ${dagLabel}</h3>
+      <span style="font-weight:700;color:var(--accent)">${dateActKcal} kcal</span>
     </div>`;
 
-  if(todayActs.length > 0){
-    todayActs.forEach((a, i) => {
+  if(dateActs.length > 0){
+    dateActs.forEach((a, i) => {
       const at = ACTIVITY_TYPES[a.type] || ACTIVITY_TYPES.overig;
       html += `<div class="activity-item">
         <div class="ai-icon">${at.emoji}</div>
@@ -1953,7 +1991,7 @@ function renderActiviteit(){
       </div>`;
     });
   } else {
-    html += `<div class="empty-state"><div class="empty-icon">🏃</div><p>Nog geen activiteiten vandaag</p></div>`;
+    html += `<div class="empty-state"><div class="empty-icon">🏃</div><p>Nog geen activiteiten ${dagLabel}</p></div>`;
   }
 
   html += `<button class="btn btn-primary btn-block" onclick="openAddActivity()" style="margin-top:8px">➕ Activiteit toevoegen</button>`;
@@ -1985,7 +2023,7 @@ function renderActiviteit(){
 
 function saveSteps(){
   const val = parseInt(document.getElementById('stepsInput').value) || 0;
-  steps[today()] = val;
+  steps[selectedDate] = val;
   sv('steps', steps);
   renderActiviteit();
   toast('Stappen opgeslagen!');
@@ -2028,8 +2066,8 @@ function saveActivity(){
   let kcal = parseInt(document.getElementById('actKcal').value);
   if(!kcal || isNaN(kcal)) kcal = Math.round((duur / 30) * at.kcalPer30);
 
-  if(!activities[today()]) activities[today()] = [];
-  activities[today()].push({type, duur, kcal});
+  if(!activities[selectedDate]) activities[selectedDate] = [];
+  activities[selectedDate].push({type, duur, kcal});
   sv('activities', activities);
   closeModal('modalActivity');
   renderActiviteit();
@@ -2037,8 +2075,8 @@ function saveActivity(){
 }
 
 function removeActivity(idx){
-  if(!activities[today()]) return;
-  activities[today()].splice(idx, 1);
+  if(!activities[selectedDate]) return;
+  activities[selectedDate].splice(idx, 1);
   sv('activities', activities);
   renderActiviteit();
   toast('Verwijderd');
@@ -2206,10 +2244,10 @@ function renderProfiel(){
   html += `<div class="card">
     <h3>⚖️ Gewicht loggen</h3>
     <div style="display:flex;gap:8px;margin-top:8px">
-      <input type="number" id="weightInput" placeholder="Gewicht (kg)" step="0.1" value="${weightLog[today()] || ''}" style="flex:1">
+      <input type="number" id="weightInput" placeholder="Gewicht (kg)" step="0.1" value="${weightLog[selectedDate] || ''}" style="flex:1">
       <button class="btn btn-primary" onclick="logWeight()">💾</button>
     </div>
-    ${weightLog[today()] ? `<div style="font-size:.8rem;color:var(--green);margin-top:4px">✅ Vandaag gelogd: ${weightLog[today()]} kg</div>` : ''}
+    ${weightLog[selectedDate] ? `<div style="font-size:.8rem;color:var(--green);margin-top:4px">✅ Gelogd: ${weightLog[selectedDate]} kg</div>` : ''}
   </div>`;
 
   html += `<div class="card">
@@ -2249,7 +2287,7 @@ function updateProfile(){
 function logWeight(){
   const val = parseFloat(document.getElementById('weightInput').value);
   if(!val || isNaN(val)){toast('Vul een geldig gewicht in');return}
-  weightLog[today()] = val;
+  weightLog[selectedDate] = val;
   sv('weightLog', weightLog);
   profile.gewicht = val;
   sv('profile', profile);
@@ -2411,8 +2449,8 @@ function getFysioTodayExercises(){
 }
 
 function toggleFysioCheck(exerciseId){
-  if(!fysioLog[today()]) fysioLog[today()] = {};
-  fysioLog[today()][exerciseId] = !fysioLog[today()][exerciseId];
+  if(!fysioLog[selectedDate]) fysioLog[selectedDate] = {};
+  fysioLog[selectedDate][exerciseId] = !fysioLog[selectedDate][exerciseId];
   sv('fysioLog', fysioLog);
   renderWorkouts();
 }
@@ -2477,7 +2515,7 @@ function toggleFysioActive(id){
 
 function renderFysioSection(){
   const todayExercises = getFysioTodayExercises();
-  const todayLog = fysioLog[today()] || {};
+  const todayLog = fysioLog[selectedDate] || {};
   const streak = getFysioStreak();
   const doneCount = todayExercises.filter(ex => todayLog[ex.id]).length;
   const allDone = todayExercises.length > 0 && doneCount === todayExercises.length;
@@ -2646,8 +2684,8 @@ function getHabitsForDate(dateStr){
 }
 
 function toggleHabit(habitId){
-  if(!habitLog[today()]) habitLog[today()] = {};
-  habitLog[today()][habitId] = !habitLog[today()][habitId];
+  if(!habitLog[selectedDate]) habitLog[selectedDate] = {};
+  habitLog[selectedDate][habitId] = !habitLog[selectedDate][habitId];
   sv('habitLog', habitLog);
   checkHabitAchievements();
   renderHabits();
@@ -2709,13 +2747,14 @@ function getHabitBestStreak(habitId){
   return best;
 }
 
-function getTodayHabitScore(){
-  const todayHabits = getHabitsForDate(today());
-  if(todayHabits.length === 0) return {done:0,total:0,pct:0};
-  const log = habitLog[today()] || {};
-  const done = todayHabits.filter(h => log[h.id]).length;
-  return {done, total: todayHabits.length, pct: Math.round((done / todayHabits.length) * 100)};
+function getHabitScoreForDate(dateStr){
+  const dateHabits = getHabitsForDate(dateStr);
+  if(dateHabits.length === 0) return {done:0,total:0,pct:0};
+  const log = habitLog[dateStr] || {};
+  const done = dateHabits.filter(h => log[h.id]).length;
+  return {done, total: dateHabits.length, pct: Math.round((done / dateHabits.length) * 100)};
 }
+function getTodayHabitScore(){ return getHabitScoreForDate(selectedDate); }
 
 function getHabitScoreColor(pct){
   if(pct < 50) return '#e53935';
@@ -2819,15 +2858,17 @@ function showAchievement(a){
 function renderHabits(){
   const score = getTodayHabitScore();
   const scoreColor = getHabitScoreColor(score.pct);
-  const todayHabits = getHabitsForDate(today());
-  const log = habitLog[today()] || {};
+  const todayHabits = getHabitsForDate(selectedDate);
+  const log = habitLog[selectedDate] || {};
   const allStreak = getAllDaysStreak();
+  const isToday = selectedDate === today();
+  const dagLabel = isToday ? 'Vandaag' : selectedDate.slice(5);
 
-  let html = '';
+  let html = renderDateNav();
 
   // Daily score
   html += `<div class="card" style="text-align:center">
-    <h3>📊 Vandaag: ${score.done}/${score.total} habits gedaan</h3>
+    <h3>📊 ${dagLabel}: ${score.done}/${score.total} habits gedaan</h3>
     <div style="font-size:2rem;font-weight:800;color:${scoreColor};margin:8px 0">${score.pct}%</div>
     <div class="habit-score-bar">
       <div class="habit-score-fill" style="width:${score.pct}%;background:${scoreColor}"></div>
@@ -2839,7 +2880,7 @@ function renderHabits(){
   // Today's habits
   html += `<div class="card"><h3>✅ Dagelijkse gewoontes</h3>`;
   if(todayHabits.length === 0){
-    html += `<div class="empty-state"><div class="empty-icon">✅</div><p>Geen habits gepland voor vandaag</p></div>`;
+    html += `<div class="empty-state"><div class="empty-icon">✅</div><p>Geen habits gepland voor ${dagLabel.toLowerCase()}</p></div>`;
   } else {
     todayHabits.forEach(h => {
       const done = log[h.id] === true;
